@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Thrust Stand — Levon Ananyan</title>
+<meta name="description" content="The Thrust Stand combines load cell instrumentation and an ESP32 dashboard to characterize propulsion systems for The SMART Hawk.">
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav is-stuck">
+  <div class="nav__inner">
+    <a class="nav__brand" href="../index.html">
+      <span class="nav__mark">LA</span>
+      <span>Levon Ananyan</span>
+    </a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="../index.html#smarthawk">The SMART Hawk</a></li>
+        <li><a href="../index.html#program">Test Systems</a></li>
+        <li><a href="../index.html#independent">Analysis</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="wrap">
+    <a class="crumb" href="../index.html#program"><span aria-hidden="true">&larr;</span> Return to test systems</a>
+    <p class="eyebrow" data-reveal>The SMART Hawk · Propulsion test system</p>
+    <h1 class="display gradient-text" data-reveal style="--d:80ms">The Thrust Stand</h1>
+    <p class="lead" data-reveal style="--d:160ms;max-width:760px;margin:20px 0 30px">
+      Reconfigured as a reliable propulsion instrument, this static test rig measures axial thrust
+      through a 5 kg load cell and streams results to an ESP32 hosted dashboard. Testing identified
+      the motor and propeller configuration used on The SMART Hawk.
+    </p>
+
+    <div class="lineage-bar" data-reveal style="--d:60ms;margin-bottom:26px;max-width:760px">
+      <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk program</span>
+      <span>Developed to validate a propulsion system capable of supporting The SMART Hawk's 11&nbsp;m/s design condition. &nbsp;<a class="link" href="smarthawk.html" style="font-size:14px">View The SMART Hawk <span class="chev">&#8594;</span></a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HERO IMAGE ===================== -->
+<section class="section section--tight" style="padding-top:0">
+  <div class="wrap">
+    <figure class="media media--16x9 media--contain media--paper" data-reveal="scale" data-label="The Thrust Stand"
+            style="border-radius:var(--radius-lg);box-shadow:0 60px 120px -60px #000">
+      <img src="../assets/img/thrust-stand/hero.jpg" alt="The Thrust Stand with a motor and propeller installed" data-parallax="0.08">
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== SPECS ===================== -->
+<section class="section section--tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="specs" data-reveal>
+      <div class="spec"><div class="spec__k">Force transducer</div><div class="spec__v">5 kg single axis load cell</div></div>
+      <div class="spec"><div class="spec__k">Measurement range</div><div class="spec__v">Approximately 49 N axial</div></div>
+      <div class="spec"><div class="spec__k">Signal conversion</div><div class="spec__v">HX711 24 bit ADC</div></div>
+      <div class="spec"><div class="spec__k">Embedded controller</div><div class="spec__v">ESP32 with local Wi Fi access point</div></div>
+      <div class="spec"><div class="spec__k">Sample interval</div><div class="spec__v">10&ndash;2000 ms; 50 ms default</div></div>
+      <div class="spec"><div class="spec__k">Data output</div><div class="spec__v">Timestamped CSV</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESULT FIRST ===================== -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="duo">
+      <div data-reveal>
+        <p class="eyebrow">Propulsion selection</p>
+        <h2 class="h2" style="margin-bottom:20px">Converting a design velocity into verified hardware</h2>
+        <p class="body" style="margin-bottom:16px">
+          The SMART Hawk aerodynamic model assumed an 11&nbsp;m/s cruise condition. Propulsion testing
+          was therefore required to verify that a production motor and propeller could provide adequate
+          thrust for the 1.67&nbsp;kg airframe.
+        </p>
+        <p class="body" style="margin-bottom:16px">
+          Compared 1100&nbsp;KV and 1250&nbsp;KV motors across multiple propeller configurations.
+          The selected 1250&nbsp;KV motor with an 11&nbsp;&times;&nbsp;5.5&nbsp;inch propeller produced
+          <strong style="color:var(--text)">18&nbsp;N</strong> of static thrust, giving the
+          morphing aircraft a thrust to weight ratio of <strong style="color:var(--text)">1.1</strong>.
+        </p>
+        <p class="body">
+          Upgraded the 9th cohort mechanical platform by correcting the sensor wiring, improving
+          communication reliability, and developing a new browser based data acquisition interface.
+        </p>
+      </div>
+      <figure class="fig" data-reveal="scale" style="--d:120ms">
+        <div class="media media--3x4" data-label="The Thrust Stand on the laboratory bench" style="aspect-ratio:3/4">
+          <img src="../assets/img/thrust-stand/stand-bench.jpg" alt="The Thrust Stand with motor, electronic speed controller, and instrumentation wiring">
+        </div>
+        <figcaption class="fig__cap">Rigid vertical support with the motor mount and load cell aligned along the thrust axis.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MEASUREMENT CHAIN ===================== -->
+<section class="section" id="chain">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Measurement architecture</p>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Direct axial load measurement</h2>
+    <p class="lead" data-reveal style="max-width:700px;margin-bottom:clamp(36px,5vw,56px)">
+      Aligned the motor, structural reaction path, and load cell to prioritize axial thrust while
+      minimizing sensitivity to off axis loading.
+    </p>
+
+    <div class="dl" data-reveal style="max-width:900px">
+      <div class="dl__row"><div class="dl__k">Mechanical structure</div><div class="dl__v">Uses a rigid base and vertical support with a forward facing motor mount; interchangeable hardware enables direct back to back configuration testing</div></div>
+      <div class="dl__row"><div class="dl__k">Force measurement</div><div class="dl__v">Conditions a <strong>5 kg single axis load cell</strong> through an <strong>HX711</strong> 24 bit ADC, with data on ESP32 GPIO&nbsp;4 and clock on GPIO&nbsp;2</div></div>
+      <div class="dl__row"><div class="dl__k">Electrical integration</div><div class="dl__v">Matched signal assignments to the firmware pinout and established a common ground reference, eliminating software remapping and stabilizing force measurements</div></div>
+      <div class="dl__row"><div class="dl__k">Calibration method</div><div class="dl__v">Applies a known mass to determine the calibration factor, then stores the coefficient in nonvolatile device memory for reuse after power cycling</div></div>
+      <div class="dl__row"><div class="dl__k">Operating envelope</div><div class="dl__v">Supports static propulsion testing below the rated capacity of the load cell</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INTERFACE ===================== -->
+<section class="section section--tight" id="interface">
+  <div class="wrap">
+    <div class="duo">
+      <div data-reveal>
+        <p class="eyebrow">Data acquisition interface</p>
+        <h2 class="h2" style="margin-bottom:20px">Self contained wireless instrumentation</h2>
+        <p class="body" style="margin-bottom:16px">
+          Configured the ESP32 as an independent Wi Fi access point that serves the dashboard from
+          onboard memory, eliminating dependence on laboratory networking or installed host software.
+        </p>
+        <p class="body" style="margin-bottom:16px">
+          Displays live and maximum thrust in grams, newtons, and pounds force; provides start,
+          pause, tare, and maximum reset controls; and plots force on a fixed 0&ndash;5000&nbsp;g
+          scale for consistent comparison of startup, steady state, and shutdown behavior.
+        </p>
+        <p class="body">
+          Supports user selectable sample intervals from 10&nbsp;ms to 2000&nbsp;ms, with a 50&nbsp;ms
+          default, and exports each test as a timestamped CSV for post processing.
+        </p>
+      </div>
+      <figure class="fig" data-reveal="scale" style="--d:120ms">
+        <div class="media media--4x3 media--contain" data-label="ESP32 thrust stand dashboard">
+          <img src="../assets/img/thrust-stand/dashboard.png" alt="The ESP32 thrust stand web dashboard">
+        </div>
+        <figcaption class="fig__cap">Dashboard served from ESP32 memory through a dedicated wireless access point.</figcaption>
+      </figure>
+    </div>
+
+    <div class="duo" style="align-items:stretch;margin-top:clamp(40px,6vw,72px)">
+      <div class="callout callout--proven" data-reveal>
+        <div class="callout__k">Validated capabilities</div>
+        <ul>
+          <li><strong>Axial force measurement</strong> to approximately 49&nbsp;N, calibrated against a known mass with nonvolatile coefficient storage.</li>
+          <li><strong>Live data acquisition</strong> in 3 engineering units, including time history plotting and CSV export.</li>
+          <li><strong>Propulsion comparison</strong> &mdash; selected the motor and propeller configuration installed on The SMART Hawk.</li>
+        </ul>
+      </div>
+      <div class="callout callout--open" data-reveal style="--d:120ms">
+        <div class="callout__k">Planned capability</div>
+        <ul>
+          <li>Integrate 2 additional force transducers to resolve loading in <strong>X, Y, and Z</strong>.</li>
+          <li>Extend the platform from axial thrust characterization to 3 axis propulsion interaction measurement for asymmetric aircraft wake conditions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout" data-reveal style="margin-top:clamp(36px,5vw,56px);max-width:760px">
+      <div class="callout__k">Engineering contribution</div>
+      <p class="body" style="margin-bottom:14px">
+        Inherited the physical rig from the 9th cohort and led its instrumentation and software redesign.
+      </p>
+      <p class="body" style="margin:0">
+        Rewired the sensor outputs to match the firmware pinout, rebuilt the web interface, and
+        revised ESP32 connection handling. These changes eliminated mid test communication drops
+        and enabled continuous data capture, live plotting, and timestamped CSV export.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAGER ===================== -->
+<section class="pager">
+  <div class="wrap pager__row">
+    <a class="link" href="bird-stand.html"><span class="chev" style="transform:rotate(180deg)">&#8594;</span> The Bird Stand</a>
+    <a class="link" href="project-4.html">The Hardy Cross Calculator <span class="chev">&#8594;</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>&copy; <span data-year></span> Levon Ananyan. All rights reserved.</span>
+    <nav class="footer__links">
+      <a href="../index.html#smarthawk">The SMART Hawk</a>
+      <a href="../index.html#program">Test Systems</a>
+      <a href="../index.html#independent">Analysis</a>
+      <a href="mailto:leoaservices@gmail.com">leoaservices@gmail.com</a>
+      <a href="https://www.linkedin.com/in/levon-ananyan-566929194/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

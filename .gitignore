@@ -1,0 +1,5 @@
+.DS_Store
+Thumbs.db
+
+# Working scratch — large zips/exports, not part of the site
+assets/img/_to_delete/

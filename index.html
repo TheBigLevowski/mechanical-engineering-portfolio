@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Levon Ananyan — Mechanical Engineering Portfolio</title>
+<meta name="description" content="Mechanical engineering portfolio of Levon Ananyan, featuring The SMART Hawk and the test, controls, and analysis systems developed to validate it.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Levon Ananyan — Mechanical Engineering Portfolio">
+<meta property="og:description" content="The SMART Hawk and the engineering systems developed to design, test, and validate it.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html">
+      <span class="nav__mark">LA</span>
+      <span>Levon Ananyan</span>
+    </a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="#smarthawk">The SMART Hawk</a></li>
+        <li><a href="#program">Test Systems</a></li>
+        <li><a href="#independent">Analysis</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== HERO / ABOUT ===================== -->
+<section class="hero" id="about">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero__grid">
+
+      <!-- PROFILE PICTURE -->
+      <div class="hero__portrait" data-reveal="scale">
+        <figure class="portrait">
+          <picture>
+            <source srcset="assets/img/profile.webp" type="image/webp">
+            <img src="assets/img/profile.png" alt="Levon Ananyan, mechanical engineering graduate">
+          </picture>
+        </figure>
+      </div>
+
+      <!-- DESCRIPTION OF ME -->
+      <div>
+        <p class="hero__role" data-reveal style="--d:60ms">
+          <span class="dot" aria-hidden="true"></span> Mechanical Engineering Graduate · Test Systems &amp; Prototyping
+        </p>
+        <h1 class="display gradient-text hero__name" data-reveal style="--d:140ms">
+          Engineering systems<br>from concept<br>through validation.
+        </h1>
+        <p class="lead" data-reveal style="--d:230ms">
+          I am a mechanical engineering graduate of California State University, Northridge and led the development of testing infrastructure for a 17 person team developing The SMART Hawk, a shape morphing UAV. Entrusted with responsibility for the project's experimental test systems, I designed, built, and coordinated the implementation of a 5 module wind generator, an advanced aircraft stand, and a load cell thrust stand used to support aircraft validation. My work spans mechanical fabrication, instrumentation, embedded controls, and web interfaces using Arduino, ESP32, and NVIDIA Jetson platforms.
+        </p>
+        <div class="hero__actions" data-reveal style="--d:320ms">
+          <a class="btn" href="#smarthawk">View The SMART Hawk <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#contact">Contact me</a>
+        </div>
+
+        <div class="stats" data-reveal style="--d:400ms">
+          <div class="stat"><div class="stat__n">3</div><div class="stat__l">Test systems delivered</div></div>
+          <div class="stat"><div class="stat__n">6</div><div class="stat__l">Engineering projects</div></div>
+          <div class="stat"><div class="stat__n">17</div><div class="stat__l">Team members</div></div>
+          <div class="stat"><div class="stat__n">1</div><div class="stat__l">Peer reviewed publication</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Explore projects</span><span class="scroll-cue__line"></span>
+  </div>
+</section>
+
+<!-- ===================== FEATURED — SMARTHAWK ===================== -->
+<section class="section featured" id="smarthawk">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:clamp(32px,5vw,60px)">
+      <p class="eyebrow" data-reveal>Primary aircraft program</p>
+      <h2 class="h1 gradient-text" data-reveal style="--d:80ms">The SMART Hawk</h2>
+      <p class="lead" data-reveal style="--d:160ms;margin-inline:auto;max-width:660px">
+        A 1.67 kg, 1.2m span UAV that replaces conventional wings with independently
+        morphing wings and a 3 axis feathered tail. The program required purpose built systems,
+         and analytical tools for development and validation.
+      </p>
+    </div>
+
+    <div class="featured__media" data-reveal="scale" style="--d:220ms">
+      <figure class="media media--21x9 parallax" data-label="The SMART Hawk aircraft">
+        <img src="assets/img/smarthawk-hero.jpg" alt="The SMART Hawk with both morphing wings fully extended" data-parallax="0.10">
+      </figure>
+      <div class="featured__overlay">
+        <div class="featured__copy">
+          <span class="badge">Primary program</span>
+          <h3 class="h2">Intricate flight controls validated through integrated engineering</h3>
+          <p class="body" style="margin-top:10px">
+            Integrated 5 morphing degrees of freedom through independently actuated wings and a
+            9 feather tail capable of pitch, roll, and spread. Fabricated 26 cambered carbon fiber
+            feathers using tooling derived from a scanned red tailed hawk airfoil.
+          </p>
+        </div>
+        <a class="link" href="projects/smarthawk.html">View The SMART Hawk <span class="chev">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE SMARTHAWK PROGRAM (PROJECTS 01–03) ===================== -->
+<section class="section section--tight" id="program">
+  <div class="wrap">
+
+    <div class="center" style="max-width:660px;margin:0 auto clamp(10px,2vw,20px)">
+      <p class="eyebrow" data-reveal>Aircraft test infrastructure</p>
+      <h2 class="h1 gradient-text" data-reveal style="--d:80ms">3 systems developed for validation</h2>
+      <p class="lead" data-reveal style="--d:160ms;margin-top:16px">
+        The SMART Hawk exceeded the dimensional capacity of CSUN's available wind tunnels.
+        The team therefore developed dedicated airflow, controlled motion, and propulsion test
+        systems to generate repeatable data under laboratory conditions.
+      </p>
+    </div>
+
+    <!-- Branch diagram: SmartHawk splits into the three projects below -->
+    <div class="lineage" data-reveal aria-hidden="true">
+      <span class="lineage__node"></span>
+      <svg viewBox="0 0 1000 100" preserveAspectRatio="none" role="presentation">
+        <defs>
+          <linearGradient id="lineageGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
+            <stop offset="0%"   stop-color="#2997ff" stop-opacity=".85"/>
+            <stop offset="100%" stop-color="#2997ff" stop-opacity=".14"/>
+          </linearGradient>
+        </defs>
+        <path pathLength="1" d="M500 0 V38"/>
+        <path pathLength="1" d="M500 38 H172 Q166 38 166 44 V100"/>
+        <path pathLength="1" d="M500 38 V100"/>
+        <path pathLength="1" d="M500 38 H828 Q834 38 834 44 V100"/>
+      </svg>
+    </div>
+
+    <div class="grid-3" data-stagger="110">
+
+      <!-- PROJECT 1 — WIND GENERATOR -->
+      <a class="card" href="projects/wind-generator.html" data-reveal>
+        <div class="card__media">
+          <figure class="media media--3x2" data-label="The Wind Generator">
+            <img src="assets/img/wind-generator.jpg" alt="The Wind Generator in its 5 module open air configuration">
+          </figure>
+        </div>
+        <div class="card__body">
+          <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk · Airflow</span>
+          <h3 class="h3">The Wind Generator</h3>
+          <p class="body">
+            Expanded a 3 module fan array to 5 modules and 10 independently controlled
+            motors, enabling full span airflow testing through a Jetson based control system.
+          </p>
+          <span class="link">View The Wind Generator <span class="chev">→</span></span>
+        </div>
+      </a>
+
+      <!-- PROJECT 2 — BIRD STAND -->
+      <a class="card" href="projects/bird-stand.html" data-reveal>
+        <div class="card__media">
+          <figure class="media media--3x2" data-label="The Bird Stand">
+            <img src="assets/img/bird-stand.jpg" alt="The Bird Stand supporting The SMART Hawk">
+          </figure>
+        </div>
+        <div class="card__body">
+          <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk · Structure</span>
+          <h3 class="h3">The Bird Stand</h3>
+          <p class="body">
+            Designed and fabricated a steel reinforced stand that constrains translation while
+            allowing pitch and roll about the aircraft's center of gravity.
+          </p>
+          <span class="link">View The Bird Stand <span class="chev">→</span></span>
+        </div>
+      </a>
+
+      <!-- PROJECT 3 — THRUST STAND -->
+      <a class="card" href="projects/thrust-stand.html" data-reveal>
+        <div class="card__media">
+          <figure class="media media--3x2" data-label="The Thrust Stand">
+            <img src="assets/img/thrust-stand.jpg" alt="The Thrust Stand configured for motor and propeller testing">
+          </figure>
+        </div>
+        <div class="card__body">
+          <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk · Propulsion</span>
+          <h3 class="h3">The Thrust Stand</h3>
+          <p class="body">
+            Rebuilt a load cell test rig used to select a 1250 KV motor and 11 &times; 5.5 propeller,
+            achieving 18 N of static thrust and a 1.1 thrust to weight ratio.
+          </p>
+          <span class="link">View The Thrust Stand <span class="chev">→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INDEPENDENT WORK (PROJECT 04) ===================== -->
+<section class="section section--tight" id="independent">
+  <div class="wrap">
+    <hr class="rule" style="margin-bottom:clamp(48px,7vw,90px)">
+
+    <div style="margin-bottom:clamp(24px,3vw,38px)">
+      <p class="eyebrow" data-reveal style="color:var(--text-mute)">Independent fluid systems analysis</p>
+      <h2 class="h1 gradient-text" data-reveal style="--d:80ms">Engineering analysis</h2>
+      <p class="lead" data-reveal style="--d:160ms;max-width:640px;margin-top:16px">
+        An independent numerical study developed to compare pipe network friction models and
+        quantify their effect on converged flow distribution and outlet pressure.
+      </p>
+    </div>
+
+    <!-- PROJECT 4 — STANDALONE -->
+    <a class="card card--wide" href="projects/project-4.html" data-reveal>
+      <div class="card__media">
+        <figure class="media media--3x2 media--contain media--paper" data-label="The Hardy Cross Calculator pipe network">
+          <img src="assets/img/project-4.jpg" alt="10 pipe network evaluated with The Hardy Cross Calculator">
+        </figure>
+      </div>
+      <div class="card__body">
+        <span class="chip chip--solo"><span class="chip__dot"></span>Independent · Fluid systems</span>
+        <h3 class="h2">The Hardy Cross Calculator</h3>
+        <p class="body">
+          Developed an Excel based Hardy Cross solver for a 10 pipe, 3 loop cast iron network,
+          completing 8 iterations per loop to compare Darcy Weisbach and Hazen Williams results.
+        </p>
+        <span class="link">View The Hardy Cross Calculator <span class="chev">→</span></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="section section--tight" id="contact">
+  <div class="wrap">
+    <div class="contact" data-reveal="scale">
+      <p class="eyebrow">Contact</p>
+      <h2 class="h1 gradient-text" style="margin-bottom:18px">Engineering opportunities and collaboration</h2>
+      <p class="lead" style="max-width:560px;margin:0 auto 30px">
+        I am available for mechanical engineering opportunities involving test system development,
+        electromechanical prototyping, instrumentation, controls integration, and design validation.
+      </p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn" href="mailto:leoaservices@gmail.com">leoaservices@gmail.com</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/levon-ananyan-566929194/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>© <span data-year></span> Levon Ananyan. All rights reserved.</span>
+    <nav class="footer__links">
+      <a href="#smarthawk">The SMART Hawk</a>
+      <a href="#program">Test Systems</a>
+      <a href="#independent">Analysis</a>
+      <a href="mailto:leoaservices@gmail.com">leoaservices@gmail.com</a>
+      <a href="https://www.linkedin.com/in/levon-ananyan-566929194/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

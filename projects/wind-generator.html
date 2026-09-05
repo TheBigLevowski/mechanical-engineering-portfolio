@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Wind Generator — Levon Ananyan</title>
+<meta name="description" content="The Wind Generator uses 5 modules and 10 independently controlled motors to provide full span airflow testing for The SMART Hawk.">
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav is-stuck">
+  <div class="nav__inner">
+    <a class="nav__brand" href="../index.html">
+      <span class="nav__mark">LA</span>
+      <span>Levon Ananyan</span>
+    </a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="../index.html#smarthawk">The SMART Hawk</a></li>
+        <li><a href="../index.html#program">Test Systems</a></li>
+        <li><a href="../index.html#independent">Analysis</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="wrap">
+    <a class="crumb" href="../index.html#program"><span aria-hidden="true">&larr;</span> Return to test systems</a>
+    <p class="eyebrow" data-reveal>The SMART Hawk · Airflow test system</p>
+    <h1 class="display gradient-text" data-reveal style="--d:80ms">The Wind Generator</h1>
+    <p class="lead" data-reveal style="--d:160ms;max-width:760px;margin:20px 0 30px">
+      Designed for full span testing of The SMART Hawk, The Wind Generator uses 5 modules
+      and 10 independently controlled motors to produce adjustable airflow outside the geometric
+      limits of the university's wind tunnels.
+    </p>
+
+    <div class="lineage-bar" data-reveal style="--d:60ms;margin-bottom:26px;max-width:760px">
+      <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk program</span>
+      <span>Developed to provide repeatable full span inflow for <strong>The SMART Hawk</strong>. &nbsp;<a class="link" href="smarthawk.html" style="font-size:14px">View The SMART Hawk <span class="chev">&#8594;</span></a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HERO IMAGE ===================== -->
+<section class="section section--tight" style="padding-top:0">
+  <div class="wrap">
+    <figure class="media media--16x9" data-reveal="scale" data-label="The Wind Generator"
+            style="border-radius:var(--radius-lg);box-shadow:0 60px 120px -60px #000">
+      <img src="../assets/img/wind-generator/hero.jpg" alt="The Wind Generator installed in its 5 module laboratory configuration" data-parallax="0.08">
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== SPECS ===================== -->
+<section class="section section--tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="specs" data-reveal>
+      <div class="spec"><div class="spec__k">Fan modules</div><div class="spec__v">5</div></div>
+      <div class="spec"><div class="spec__k">Independent motors</div><div class="spec__v">10</div></div>
+      <div class="spec"><div class="spec__k">Control hardware</div><div class="spec__v">Jetson Orin Nano + Pico P4</div></div>
+      <div class="spec"><div class="spec__k">Motor command</div><div class="spec__v">PWM to electronic speed controllers</div></div>
+      <div class="spec"><div class="spec__k">Power system</div><div class="spec__v">12 V DC</div></div>
+      <div class="spec"><div class="spec__k">Operator interface</div><div class="spec__v">Browser based dashboard</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY ===================== -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="duo">
+      <div data-reveal>
+        <p class="eyebrow">Test limitation</p>
+        <h2 class="h2" style="margin-bottom:20px">Pushing the Limits of Large Scale Airflow Testing</h2>
+        <p class="body" style="margin-bottom:16px">
+          Morphing wing actuation simultaneously affects roll, pitch, lift, drag, and stability.
+          Repeatable inflow was required to isolate those effects, but The SMART Hawk's 1.2 m span
+          exceeded the test section width of CSUN's available wind tunnels.
+        </p>
+        <p class="body">
+          Developed an open air modular fan array to remove fixed test section constraints, then
+          implemented independent motor control to balance velocity across the complete flow field.
+        </p>
+      </div>
+      <figure class="fig" data-reveal="scale" style="--d:120ms">
+        <div class="media media--3x2 media--contain media--paper" data-label="Fan modules">
+          <img src="../assets/img/wind-generator/modules.jpg" alt="The wind generator fan modules">
+        </div>
+        <figcaption class="fig__cap">5 module frame with each motor assigned to an independent control channel.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TWO GENERATIONS ===================== -->
+<section class="section" id="generations">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>System development</p>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">2 hardware and control architectures</h2>
+    <p class="lead" data-reveal style="max-width:700px;margin-bottom:clamp(40px,6vw,72px)">
+      Evolved the system from a 3 module, single controller prototype into a 5 module platform
+      with distributed computation, 10 independent motor channels, and software defined airflow control.
+    </p>
+
+    <div class="timeline">
+
+      <article class="tl-item" data-reveal>
+        <span class="tl-item__stage">Generation 01</span>
+        <div class="tl-item__grid">
+          <figure class="media media--4x3" data-label="3 module generator">
+            <img src="../assets/img/wind-generator/gen1-modules.jpg" alt="The Wind Generator in its original 3 module configuration with The SMART Hawk mounted in front">
+          </figure>
+          <div>
+            <h3 class="h3" style="margin-bottom:12px">3 module prototype with centralized control</h3>
+            <p class="body">3 fan modules in a shared flow path, each with 2 contra rotating
+            motors on their own ESCs &mdash; 6 motors, 3 independent 400&nbsp;W supplies at 24&nbsp;V,
+            about 1.2&nbsp;kW total. A single Arduino R4 hosted the dashboard and generated all PWM
+            outputs. Replacing binary fan commands with continuous PWM enabled adjustable airflow
+            velocity and module level balancing.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item" data-reveal>
+        <span class="tl-item__stage">Control</span>
+        <div class="tl-item__grid">
+          <div>
+            <h3 class="h3" style="margin-bottom:12px">Per module trim with enforced command limits</h3>
+            <p class="body" style="margin-bottom:16px">Modules never produce identical flow, so each one
+            carries a signed trim offset on top of the master setpoint:</p>
+            <div class="callout" style="border-style:solid;margin-bottom:16px">
+              <p class="body" style="margin:0;font-family:var(--mono);font-size:15px;color:var(--text)">
+                P<sub>effective</sub> = P<sub>setpoint</sub> + P<sub>trim</sub> &nbsp;&le;&nbsp; 100%
+              </p>
+            </div>
+            <p class="body">The interface enforces the command limit: applying
+            +12% trim to a module and the maximum selectable setpoint drops to 88%, so the array
+            cannot exceed 100%. These offsets provide the current method for balancing airflow between modules.</p>
+          </div>
+          <div class="callout callout--open">
+            <div class="callout__k">Safety controls</div>
+            <ul>
+              <li>Implemented a global <strong>emergency shutdown</strong> that sets the master command and all electronic speed controller outputs to 0.</li>
+              <li>Added an independent physical power cutoff adjacent to the test system.</li>
+              <li>Established a common electrical reference across power supplies and controllers to maintain stable PWM signaling under load.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item" data-reveal>
+        <span class="tl-item__stage">Generation 02</span>
+        <div class="tl-item__grid">
+          <figure class="media media--16x9 media--contain media--paper" data-label="Control dashboard">
+            <img src="../assets/img/wind-generator/dashboard.png" alt="The wind generator control dashboard showing per module throttle and steady operation mode">
+          </figure>
+          <div>
+            <h3 class="h3" style="margin-bottom:12px">5 module platform with distributed computation</h3>
+            <p class="body">Expanded the array from 3 to 5 modules and from 6 to 10 independently
+            controlled motors. Divided the control architecture between an NVIDIA Jetson Orin Nano,
+            which manages the interface, telemetry, airflow pattern generation, and future AI assisted
+            features, and an Arduino Pico P4 dedicated to clean PWM generation for the electronic speed
+            controllers. The interface above runs on the Jetson
+            &mdash; providing independent motor commands, telemetry, and steady operation control.
+            Software defined configuration eliminated control changes through rewiring. Multiple
+            high output 12&nbsp;V supplies accommodate transient current demand from 10 high kV motors
+            and prevent electronic speed controller desynchronization.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOOL ===================== -->
+<section class="section section--tight" id="tool">
+  <div class="wrap">
+    <div class="duo">
+      <div data-reveal>
+        <p class="eyebrow">Instrumentation support</p>
+        <h2 class="h2" style="margin-bottom:20px">Anemometer wiring wizard</h2>
+        <p class="body" style="margin-bottom:16px">
+          Developed a browser based wiring tool to standardize anemometer integration for closed loop
+          airflow control. Users assign Hall signal, temperature signal, supply, and ground conductors
+          directly on an interactive UNO R4 WiFi pin diagram.
+        </p>
+        <p class="body">
+          Stores assignments locally, restores previous configurations, detects pin conflicts, and
+          identifies prohibited connections to reduce harness assembly errors.
+        </p>
+      </div>
+      <figure class="fig" data-reveal="scale" style="--d:120ms">
+        <div class="media media--16x9 media--contain" data-label="Anemometer wiring wizard">
+          <img src="../assets/img/wind-generator/wiring-wizard.png" alt="The anemometer wiring wizard interface">
+        </div>
+        <figcaption class="fig__cap">Interactive pin assignment with persistent configuration and conflict detection.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SHOP WORK ===================== -->
+<section class="section section--tight" id="fabrication">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Mechanical fabrication</p>
+    <h2 class="h2" data-reveal style="margin-bottom:16px">Manual fabrication of custom steel components</h2>
+    <p class="lead" data-reveal style="max-width:660px;margin-bottom:clamp(28px,4vw,44px)">
+      Fabricated small steel components by hand using a bench grinder, controlling final geometry
+      through incremental material removal and dimensional checks between passes.
+    </p>
+    <div class="figpair">
+      <figure class="fig" data-reveal>
+        <div class="media media--4x3" data-label="Grinding a steel blank">
+          <img src="../assets/img/wind-generator/grinding-01.jpg" alt="A rectangular steel blank held at the bench grinder, beside a finished cylindrical pin">
+        </div>
+        <figcaption class="fig__cap"><b>Raw stock and finished geometry.</b> Produced the cylindrical pin from rectangular steel bar through controlled manual grinding.</figcaption>
+      </figure>
+      <figure class="fig" data-reveal style="--d:100ms">
+        <div class="media media--4x3" data-label="Finished pin">
+          <img src="../assets/img/wind-generator/grinding-02.jpg" alt="The finished cylindrical steel pin held between fingers">
+        </div>
+        <figcaption class="fig__cap"><b>Incremental material removal.</b> Rotated the blank against a 6 inch bench grinder and checked geometry between passes to achieve a functional cylindrical profile.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATUS ===================== -->
+<section class="section section--tight" id="status">
+  <div class="wrap">
+    <div class="duo" style="align-items:stretch">
+      <div class="callout callout--proven" data-reveal>
+        <div class="callout__k">Validated capabilities</div>
+        <ul>
+          <li><strong>Continuous PWM control</strong> across all modules, with master and individual commands over a 0&ndash;100% range.</li>
+          <li><strong>Module trim balancing</strong> with a software enforced 100% output ceiling.</li>
+          <li><strong>Browser based operation and emergency shutdown</strong>, supplemented by an independent physical cutoff.</li>
+          <li><strong>Data acquisition</strong> through spreadsheet compatible exports and JSON telemetry files.</li>
+        </ul>
+      </div>
+      <div class="callout callout--open" data-reveal style="--d:120ms">
+        <div class="callout__k">Development in progress</div>
+        <ul>
+          <li>Calibrate anemometers through curve fitting and signal noise filtering.</li>
+          <li>Calibrate the Pitot system and implement pressure to velocity conversion.</li>
+          <li>Automate module trim calibration to replace manual balancing.</li>
+          <li>Close the airflow control loop using anemometer and Pitot feedback.</li>
+        </ul>
+        <p class="callout__note">Current operation is open loop; manual trim balances module output and a standalone anemometer verifies velocity.</p>
+      </div>
+    </div>
+
+    <div class="callout" data-reveal style="margin-top:clamp(36px,5vw,56px);max-width:760px">
+      <div class="callout__k">Engineering contribution</div>
+      <p class="body" style="margin-bottom:14px">
+        Led both the physical expansion and control system redesign.
+      </p>
+      <p class="body" style="margin-bottom:14px">
+        <strong style="color:var(--text)">Control system.</strong> Replaced the single controller
+        architecture with a Pico P4 dedicated to PWM generation and an NVIDIA Jetson Orin Nano for
+        the interface, telemetry, and airflow pattern control. This separated time critical motor
+        commands from higher level software and eliminated hardware rewiring for control changes.
+      </p>
+      <p class="body" style="margin:0">
+        <strong style="color:var(--text)">Physical expansion.</strong> Led the expansion from 3
+        to 5 modules, increasing the system from 6 to 10 motors and extending airflow coverage
+        from a wing section to the complete 1.2 m aircraft.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAGER ===================== -->
+<section class="pager">
+  <div class="wrap pager__row">
+    <a class="link" href="smarthawk.html"><span class="chev" style="transform:rotate(180deg)">&#8594;</span> The SMART Hawk</a>
+    <a class="link" href="bird-stand.html">The Bird Stand <span class="chev">&#8594;</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>&copy; <span data-year></span> Levon Ananyan. All rights reserved.</span>
+    <nav class="footer__links">
+      <a href="../index.html#smarthawk">The SMART Hawk</a>
+      <a href="../index.html#program">Test Systems</a>
+      <a href="../index.html#independent">Analysis</a>
+      <a href="mailto:leoaservices@gmail.com">leoaservices@gmail.com</a>
+      <a href="https://www.linkedin.com/in/levon-ananyan-566929194/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
