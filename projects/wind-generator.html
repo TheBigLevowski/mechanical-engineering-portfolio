@@ -38,14 +38,12 @@
     <p class="eyebrow" data-reveal>The SMART Hawk · Airflow test system</p>
     <h1 class="display gradient-text" data-reveal style="--d:80ms">The Wind Generator</h1>
     <p class="lead" data-reveal style="--d:160ms;max-width:760px;margin:20px 0 30px">
-      Designed for full span testing of The SMART Hawk, The Wind Generator uses 5 modules
-      and 10 independently controlled motors to produce adjustable airflow outside the geometric
-      limits of the university's wind tunnels.
+      Built for full-span testing of the SMART Hawk, the Wind Generator uses five modules and ten independently controlled motors to produce adjustable airflow beyond the geometric limits of the university’s wind tunnels.&nbsp;
     </p>
 
     <div class="lineage-bar" data-reveal style="--d:60ms;margin-bottom:26px;max-width:760px">
       <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk program</span>
-      <span>Developed to provide repeatable full span inflow for <strong>The SMART Hawk</strong>. &nbsp;<a class="link" href="smarthawk.html" style="font-size:14px">View The SMART Hawk <span class="chev">&#8594;</span></a></span>
+      <span>Provides repeatable airflow across the full span of <strong>The SMART Hawk</strong>. &nbsp;<a class="link" href="smarthawk.html" style="font-size:14px">View The SMART Hawk <span class="chev">&#8594;</span></a></span>
     </div>
   </div>
 </section>
@@ -82,20 +80,17 @@
         <p class="eyebrow">Test limitation</p>
         <h2 class="h2" style="margin-bottom:20px">Pushing the Limits of Large Scale Airflow Testing</h2>
         <p class="body" style="margin-bottom:16px">
-          Morphing wing actuation simultaneously affects roll, pitch, lift, drag, and stability.
-          Repeatable inflow was required to isolate those effects, but The SMART Hawk's 1.2 m span
-          exceeded the test section width of CSUN's available wind tunnels.
+          Wing morphing changes roll, pitch, lift, drag, and stability at the same time. Studying those effects requires repeatable airflow, but The SMART Hawk's 1.2 m span exceeded the width of CSUN's available wind tunnels.
         </p>
         <p class="body">
-          Developed an open air modular fan array to remove fixed test section constraints, then
-          implemented independent motor control to balance velocity across the complete flow field.
+          Built an open air modular fan array to extend testing beyond a fixed tunnel section. Independent motor control allows airflow velocity to be balanced across the full test area.
         </p>
       </div>
       <figure class="fig" data-reveal="scale" style="--d:120ms">
         <div class="media media--3x2 media--contain media--paper" data-label="Fan modules">
           <img src="../assets/img/wind-generator/modules.jpg" alt="The wind generator fan modules">
         </div>
-        <figcaption class="fig__cap">5 module frame with each motor assigned to an independent control channel.</figcaption>
+        <figcaption class="fig__cap">The frame holds 5 modules, with an independent control channel for each motor.</figcaption>
       </figure>
     </div>
   </div>
@@ -105,10 +100,9 @@
 <section class="section" id="generations">
   <div class="wrap">
     <p class="eyebrow" data-reveal>System development</p>
-    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">2 hardware and control architectures</h2>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Building the System Through 2 Generations</h2>
     <p class="lead" data-reveal style="max-width:700px;margin-bottom:clamp(40px,6vw,72px)">
-      Evolved the system from a 3 module, single controller prototype into a 5 module platform
-      with distributed computation, 10 independent motor channels, and software defined airflow control.
+      Expanded a 3 module prototype running on a single controller into a 5 module system with 10 independent motor channels. The updated design divides computing tasks between controllers and makes airflow control configurable through software.
     </p>
 
     <div class="timeline">
@@ -120,12 +114,8 @@
             <img src="../assets/img/wind-generator/gen1-modules.jpg" alt="The Wind Generator in its original 3 module configuration with The SMART Hawk mounted in front">
           </figure>
           <div>
-            <h3 class="h3" style="margin-bottom:12px">3 module prototype with centralized control</h3>
-            <p class="body">3 fan modules in a shared flow path, each with 2 contra rotating
-            motors on their own ESCs &mdash; 6 motors, 3 independent 400&nbsp;W supplies at 24&nbsp;V,
-            about 1.2&nbsp;kW total. A single Arduino R4 hosted the dashboard and generated all PWM
-            outputs. Replacing binary fan commands with continuous PWM enabled adjustable airflow
-            velocity and module level balancing.</p>
+            <h3 class="h3" style="margin-bottom:12px">Starting With 3 Modules and a Single Controller</h3>
+            <p class="body">The prototype placed 3 fan modules in a shared flow path, each with 2 contra rotating motors and separate ESCs. The 6 motors ran on 3 independent 400&nbsp;W supplies at 24&nbsp;V, totaling about 1.2&nbsp;kW. A single Arduino R4 hosted the dashboard and generated all PWM outputs. Continuous PWM replaced on or off commands, allowing airflow speed and module balance to be adjusted.</p>
           </div>
         </div>
       </article>
@@ -134,24 +124,21 @@
         <span class="tl-item__stage">Control</span>
         <div class="tl-item__grid">
           <div>
-            <h3 class="h3" style="margin-bottom:12px">Per module trim with enforced command limits</h3>
-            <p class="body" style="margin-bottom:16px">Modules never produce identical flow, so each one
-            carries a signed trim offset on top of the master setpoint:</p>
+            <h3 class="h3" style="margin-bottom:12px">Balancing Each Module Within the Output Limit</h3>
+            <p class="body" style="margin-bottom:16px">Each module produces slightly different airflow. A positive or negative trim offset adjusts its command relative to the master setpoint:</p>
             <div class="callout" style="border-style:solid;margin-bottom:16px">
               <p class="body" style="margin:0;font-family:var(--mono);font-size:15px;color:var(--text)">
                 P<sub>effective</sub> = P<sub>setpoint</sub> + P<sub>trim</sub> &nbsp;&le;&nbsp; 100%
               </p>
             </div>
-            <p class="body">The interface enforces the command limit: applying
-            +12% trim to a module and the maximum selectable setpoint drops to 88%, so the array
-            cannot exceed 100%. These offsets provide the current method for balancing airflow between modules.</p>
+            <p class="body">The interface keeps every command within 100%. Adding +12% trim to a module lowers the maximum selectable setpoint to 88%. These trim offsets currently provide manual airflow balancing between modules.</p>
           </div>
           <div class="callout callout--open">
             <div class="callout__k">Safety controls</div>
             <ul>
-              <li>Implemented a global <strong>emergency shutdown</strong> that sets the master command and all electronic speed controller outputs to 0.</li>
-              <li>Added an independent physical power cutoff adjacent to the test system.</li>
-              <li>Established a common electrical reference across power supplies and controllers to maintain stable PWM signaling under load.</li>
+              <li>Added a global <strong>emergency shutdown</strong> that sets the master command and every electronic speed controller output to 0.</li>
+              <li>Installed an independent physical power cutoff beside the test system.</li>
+              <li>Connected the power supplies and controllers to a common electrical reference to keep PWM signals stable under load.</li>
             </ul>
           </div>
         </div>
@@ -164,16 +151,8 @@
             <img src="../assets/img/wind-generator/dashboard.png" alt="The wind generator control dashboard showing per module throttle and steady operation mode">
           </figure>
           <div>
-            <h3 class="h3" style="margin-bottom:12px">5 module platform with distributed computation</h3>
-            <p class="body">Expanded the array from 3 to 5 modules and from 6 to 10 independently
-            controlled motors. Divided the control architecture between an NVIDIA Jetson Orin Nano,
-            which manages the interface, telemetry, airflow pattern generation, and future AI assisted
-            features, and an Arduino Pico P4 dedicated to clean PWM generation for the electronic speed
-            controllers. The interface above runs on the Jetson
-            &mdash; providing independent motor commands, telemetry, and steady operation control.
-            Software defined configuration eliminated control changes through rewiring. Multiple
-            high output 12&nbsp;V supplies accommodate transient current demand from 10 high kV motors
-            and prevent electronic speed controller desynchronization.</p>
+            <h3 class="h3" style="margin-bottom:12px">Expanding to 5 Modules With Dedicated Motor Control</h3>
+            <p class="body">Expanded the array from 3 to 5 modules and from 6 to 10 independently controlled motors. An NVIDIA Jetson Orin Nano handles the interface, telemetry, and airflow patterns, with support planned for AI assisted features. An Arduino Pico P4 focuses on generating clean PWM signals for the electronic speed controllers. The dashboard above runs on the Jetson and provides independent motor commands, telemetry, and steady operation control. Software settings allow control changes without rewiring. Multiple high output 12&nbsp;V supplies handle current spikes from the 10 high kV motors and keep the electronic speed controllers synchronized.</p>
           </div>
         </div>
       </article>
@@ -188,22 +167,19 @@
     <div class="duo">
       <div data-reveal>
         <p class="eyebrow">Instrumentation support</p>
-        <h2 class="h2" style="margin-bottom:20px">Anemometer wiring wizard</h2>
+        <h2 class="h2" style="margin-bottom:20px">Making Anemometer Wiring Easier to Check</h2>
         <p class="body" style="margin-bottom:16px">
-          Developed a browser based wiring tool to standardize anemometer integration for closed loop
-          airflow control. Users assign Hall signal, temperature signal, supply, and ground conductors
-          directly on an interactive UNO R4 WiFi pin diagram.
+          Built a browser based wiring tool to guide anemometer connections for closed loop airflow control. Users assign Hall signal, temperature signal, supply, and ground wires directly on an interactive UNO R4 WiFi pin diagram.
         </p>
         <p class="body">
-          Stores assignments locally, restores previous configurations, detects pin conflicts, and
-          identifies prohibited connections to reduce harness assembly errors.
+          The tool saves assignments locally, restores previous setups, flags pin conflicts, and identifies connections to avoid, helping users catch wiring errors during harness assembly.
         </p>
       </div>
       <figure class="fig" data-reveal="scale" style="--d:120ms">
         <div class="media media--16x9 media--contain" data-label="Anemometer wiring wizard">
           <img src="../assets/img/wind-generator/wiring-wizard.png" alt="The anemometer wiring wizard interface">
         </div>
-        <figcaption class="fig__cap">Interactive pin assignment with persistent configuration and conflict detection.</figcaption>
+        <figcaption class="fig__cap">Assign pins, save the wiring setup, and check for connection conflicts in the same interface.</figcaption>
       </figure>
     </div>
   </div>
@@ -213,23 +189,22 @@
 <section class="section section--tight" id="fabrication">
   <div class="wrap">
     <p class="eyebrow" data-reveal>Mechanical fabrication</p>
-    <h2 class="h2" data-reveal style="margin-bottom:16px">Manual fabrication of custom steel components</h2>
+    <h2 class="h2" data-reveal style="margin-bottom:16px">Shaping Custom Steel Parts by Hand</h2>
     <p class="lead" data-reveal style="max-width:660px;margin-bottom:clamp(28px,4vw,44px)">
-      Fabricated small steel components by hand using a bench grinder, controlling final geometry
-      through incremental material removal and dimensional checks between passes.
+      Made small steel components with a bench grinder, removing material in stages and checking dimensions between passes to reach the required shape.
     </p>
     <div class="figpair">
       <figure class="fig" data-reveal>
         <div class="media media--4x3" data-label="Grinding a steel blank">
           <img src="../assets/img/wind-generator/grinding-01.jpg" alt="A rectangular steel blank held at the bench grinder, beside a finished cylindrical pin">
         </div>
-        <figcaption class="fig__cap"><b>Raw stock and finished geometry.</b> Produced the cylindrical pin from rectangular steel bar through controlled manual grinding.</figcaption>
+        <figcaption class="fig__cap"><b>From Steel Bar to Finished Pin.</b> Shaped a rectangular steel bar into a cylindrical pin through controlled grinding.</figcaption>
       </figure>
       <figure class="fig" data-reveal style="--d:100ms">
         <div class="media media--4x3" data-label="Finished pin">
           <img src="../assets/img/wind-generator/grinding-02.jpg" alt="The finished cylindrical steel pin held between fingers">
         </div>
-        <figcaption class="fig__cap"><b>Incremental material removal.</b> Rotated the blank against a 6 inch bench grinder and checked geometry between passes to achieve a functional cylindrical profile.</figcaption>
+        <figcaption class="fig__cap"><b>Checking the Shape Between Passes.</b> Rotated the blank against a 6 inch bench grinder and checked its shape between passes until the cylindrical pin was ready to use.</figcaption>
       </figure>
     </div>
   </div>
@@ -242,39 +217,34 @@
       <div class="callout callout--proven" data-reveal>
         <div class="callout__k">Validated capabilities</div>
         <ul>
-          <li><strong>Continuous PWM control</strong> across all modules, with master and individual commands over a 0&ndash;100% range.</li>
-          <li><strong>Module trim balancing</strong> with a software enforced 100% output ceiling.</li>
-          <li><strong>Browser based operation and emergency shutdown</strong>, supplemented by an independent physical cutoff.</li>
-          <li><strong>Data acquisition</strong> through spreadsheet compatible exports and JSON telemetry files.</li>
+          <li><strong>Continuous PWM control</strong> across all modules, with master and individual commands adjustable from 0 to 100%.</li>
+          <li><strong>Module trim balancing</strong> with software that keeps every output within 100%.</li>
+          <li><strong>Browser based operation and emergency shutdown</strong>, backed by an independent physical power cutoff.</li>
+          <li><strong>Data acquisition</strong> with spreadsheet compatible exports and telemetry saved as JSON files.</li>
         </ul>
       </div>
       <div class="callout callout--open" data-reveal style="--d:120ms">
         <div class="callout__k">Development in progress</div>
         <ul>
-          <li>Calibrate anemometers through curve fitting and signal noise filtering.</li>
-          <li>Calibrate the Pitot system and implement pressure to velocity conversion.</li>
-          <li>Automate module trim calibration to replace manual balancing.</li>
-          <li>Close the airflow control loop using anemometer and Pitot feedback.</li>
+          <li>Calibrate the anemometers using fitted response curves and signal noise filtering.</li>
+          <li>Calibrate the Pitot system and convert pressure readings into airflow velocity.</li>
+          <li>Automate trim calibration so the system can balance module airflow without manual adjustment.</li>
+          <li>Use anemometer and Pitot feedback to adjust airflow through closed loop control.</li>
         </ul>
-        <p class="callout__note">Current operation is open loop; manual trim balances module output and a standalone anemometer verifies velocity.</p>
+        <p class="callout__note">The system currently runs in open loop. Manual trim balances module output, and a standalone anemometer checks airflow velocity.</p>
       </div>
     </div>
 
     <div class="callout" data-reveal style="margin-top:clamp(36px,5vw,56px);max-width:760px">
       <div class="callout__k">Engineering contribution</div>
       <p class="body" style="margin-bottom:14px">
-        Led both the physical expansion and control system redesign.
+        Led the expansion of the fan array and the redesign of its control system.
       </p>
       <p class="body" style="margin-bottom:14px">
-        <strong style="color:var(--text)">Control system.</strong> Replaced the single controller
-        architecture with a Pico P4 dedicated to PWM generation and an NVIDIA Jetson Orin Nano for
-        the interface, telemetry, and airflow pattern control. This separated time critical motor
-        commands from higher level software and eliminated hardware rewiring for control changes.
+        <strong style="color:var(--text)">Control system.</strong> Replaced the single controller with a Pico P4 for PWM generation and an NVIDIA Jetson Orin Nano for the interface, telemetry, and airflow patterns. Dedicated PWM hardware keeps motor timing separate from higher level software, while software settings allow control changes without rewiring.
       </p>
       <p class="body" style="margin:0">
-        <strong style="color:var(--text)">Physical expansion.</strong> Led the expansion from 3
-        to 5 modules, increasing the system from 6 to 10 motors and extending airflow coverage
-        from a wing section to the complete 1.2 m aircraft.
+        <strong style="color:var(--text)">Physical expansion.</strong> Expanded the system from 3 to 5 modules and from 6 to 10 motors, extending airflow coverage from a wing section to the full 1.2 m aircraft.
       </p>
     </div>
   </div>

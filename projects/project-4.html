@@ -38,14 +38,12 @@
     <p class="eyebrow" data-reveal style="color:var(--text-mute)">Independent project · Fluid systems analysis</p>
     <h1 class="display gradient-text" data-reveal style="--d:80ms">The Hardy Cross Calculator</h1>
     <p class="lead" data-reveal style="--d:160ms;max-width:780px;margin:20px 0 30px">
-      Developed a macro free Excel solver for a 10 pipe, 3 loop cast iron water network using
-      both Darcy Weisbach and Hazen Williams. 8 iterations per loop produced converged
-      flow results within approximately 2%, while exposing a major pressure discrepancy in 1 branch.
+      Built a macro free Excel solver to explore how Darcy Weisbach and Hazen Williams predict flow and pressure in a 10 pipe, 3 loop cast iron water network. After 8 iterations per loop, the models' converged flow predictions agreed within approximately 2%, but revealed a major pressure difference in 1 branch.
     </p>
 
     <div class="lineage-bar" data-reveal style="--d:60ms;margin-bottom:26px;max-width:760px;background:none">
       <span class="chip chip--solo"><span class="chip__dot"></span>Independent analysis</span>
-      <span>Developed independently from The SMART Hawk program to evaluate looped pipe network behavior.</span>
+      <span>An independent study exploring flow and pressure in a looped pipe network, separate from The SMART Hawk program.</span>
     </div>
   </div>
 </section>
@@ -59,7 +57,7 @@
         <img src="../assets/img/hardy-cross/network.png" alt="8 node, 10 pipe, 3 loop network with specified lengths and diameters">
       </div>
       <figcaption class="fig__cap" style="margin-top:14px">
-        Network definition: 8 nodes, 10 cast iron pipes ranging from 4 to 24 inches, and 3 loops. 2 inflows
+        The network connects 8 nodes through 10 cast iron pipes with diameters from 4 to 24 inches and 3 loops. It has 2 inflows
         (Q<sub>1</sub>&nbsp;=&nbsp;3.6, Q<sub>2</sub>&nbsp;=&nbsp;10.6&nbsp;ft&sup3;/s) and 3
         outflows (Q<sub>3</sub>&nbsp;=&nbsp;8.8, Q<sub>4</sub>&nbsp;=&nbsp;1.1,
         Q<sub>5</sub>&nbsp;=&nbsp;4.3&nbsp;ft&sup3;/s).
@@ -76,7 +74,7 @@
       <div class="spec"><div class="spec__k">Independent loops</div><div class="spec__v">3</div></div>
       <div class="spec"><div class="spec__k">Network nodes</div><div class="spec__v">8</div></div>
       <div class="spec"><div class="spec__k">Friction models</div><div class="spec__v">Darcy Weisbach and Hazen Williams</div></div>
-      <div class="spec"><div class="spec__k">Iteration depth</div><div class="spec__v">8 per loop for each method</div></div>
+      <div class="spec"><div class="spec__k">Iterations per loop</div><div class="spec__v">8 per loop for each method</div></div>
       <div class="spec"><div class="spec__k">Implementation</div><div class="spec__v">Macro free Excel workbook</div></div>
     </div>
   </div>
@@ -88,11 +86,9 @@
     <div class="duo">
       <div data-reveal>
         <p class="eyebrow">Numerical method</p>
-        <h2 class="h2" style="margin-bottom:20px">Iterative flow correction through energy balance</h2>
+        <h2 class="h2" style="margin-bottom:20px">Balancing Flow Through Each Loop</h2>
         <p class="body" style="margin-bottom:16px">
-          A looped network contains more unknown flows than independent continuity equations. The
-          calculation begins with a continuity compliant flow estimate, determines each loop's signed
-          head loss imbalance, and applies a corrective flow increment to every pipe in that loop:
+          Continuity alone cannot determine every pipe flow in a looped network. The solver starts with estimated flows that satisfy continuity, calculates the signed head loss imbalance around each loop, and adjusts the flow in every pipe in that loop:
         </p>
         <div class="callout" style="border-style:solid;margin-bottom:16px">
           <p class="body" style="margin:0;font-family:var(--mono);font-size:15px;color:var(--text)">
@@ -101,16 +97,15 @@
         </div>
         <p class="body">
           The exponent <em>n</em> equals <strong>2</strong> for Darcy Weisbach and <strong>1.852</strong>
-          for Hazen Williams. The workbook evaluates both methods across 8 visible iterations,
-          preserving every intermediate correction for verification and comparison.
+          for Hazen Williams. The workbook shows 8 iterations for each method, keeping every flow correction visible for review and comparison.
         </p>
       </div>
       <div data-reveal="right" style="--d:120ms">
         <div class="dl">
-          <div class="dl__row"><div class="dl__k">Global inputs</div><div class="dl__v">Centralizes gravity, kinematic viscosity, cast iron roughness &epsilon;, and Hazen Williams coefficient <em>C</em> so material changes propagate through the complete model</div></div>
-          <div class="dl__row"><div class="dl__k">Pipe properties</div><div class="dl__v">Defines length, diameter, area, roughness, and a consistent From&nbsp;&rarr;&nbsp;To reference direction for each pipe</div></div>
-          <div class="dl__row"><div class="dl__k">Loop definition</div><div class="dl__v">Uses a membership and traversal sign matrix to identify pipe participation and direction within each loop, reducing manual sign errors</div></div>
-          <div class="dl__row"><div class="dl__k">Calculated output</div><div class="dl__v">Reports converged flow for every pipe under both friction models and outlet pressure along 3 defined paths</div></div>
+          <div class="dl__row"><div class="dl__k">Global inputs</div><div class="dl__v">Keeps gravity, kinematic viscosity, cast iron roughness &epsilon;, and the Hazen Williams coefficient <em>C</em> together so input changes update the full model</div></div>
+          <div class="dl__row"><div class="dl__k">Pipe properties</div><div class="dl__v">Sets each pipe's length, diameter, area, roughness, and From&nbsp;&rarr;&nbsp;To reference direction</div></div>
+          <div class="dl__row"><div class="dl__k">Loop definition</div><div class="dl__v">Tracks which pipes belong to each loop and their traversal signs in a matrix to reduce manual sign errors</div></div>
+          <div class="dl__row"><div class="dl__k">Calculated output</div><div class="dl__v">Reports each pipe's converged flow for both friction models and calculates outlet pressure along 3 defined paths</div></div>
         </div>
       </div>
     </div>
@@ -121,10 +116,9 @@
 <section class="section" id="results">
   <div class="wrap">
     <p class="eyebrow" data-reveal>Calculated results</p>
-    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Converged network flow distribution</h2>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Comparing Flow Across the Network</h2>
     <p class="lead" data-reveal style="max-width:700px;margin-bottom:clamp(32px,4vw,48px)">
-      Positive values follow each pipe's defined reference direction; negative values indicate reverse
-      flow. Both friction models converged, with pipe flow predictions agreeing within approximately 2%.
+      Positive values follow the pipe's reference direction, and negative values show flow in the opposite direction. Both models converged, with pipe flow predictions agreeing within approximately 2%.
     </p>
 
     <div class="tablewrap" data-reveal>
@@ -149,20 +143,16 @@
 
     <div class="duo" style="margin-top:clamp(40px,6vw,72px);align-items:stretch">
       <div data-reveal>
-        <h3 class="h3" style="margin-bottom:16px">Friction model selection drives a 3 fold head loss difference</h3>
+        <h3 class="h3" style="margin-bottom:16px">How the Friction Model Changes Predicted Pressure</h3>
         <p class="body" style="margin-bottom:16px">
-          Summing head loss from a 100&nbsp;psi inlet along A&rarr;B&rarr;C gives
+          Starting from a 100&nbsp;psi inlet, total head loss along A&rarr;B&rarr;C reaches
           <strong style="color:var(--text)">175.2&nbsp;ft</strong> under Darcy Weisbach and
-          <strong style="color:var(--text)">64.5&nbsp;ft</strong> under Hazen Williams. This
-          represents a material design difference: Hazen Williams predicts
+          <strong style="color:var(--text)">64.5&nbsp;ft</strong> under Hazen Williams. That difference changes the predicted outlet condition: Hazen Williams gives
           <strong style="color:var(--text)">+28.8&nbsp;psi</strong> at node C, while Darcy Weisbach predicts
-          <strong style="color:#ffb340">&minus;19.2&nbsp;psi</strong>, which is not physically
-          deliverable at the specified inlet pressure.
+          <strong style="color:#ffb340">&minus;19.2&nbsp;psi</strong>, indicating that the specified inlet pressure cannot support the required positive outlet pressure.
         </p>
         <p class="body">
-          Isolated the discrepancy to pipe BC: 4,000&nbsp;ft of 4 inch cast iron line carrying
-          0.52&nbsp;cfs at approximately 6&nbsp;ft/s. The upstream 20 inch pipe contributes only several
-          feet of loss, confirming that 1 high resistance branch governs the feasibility conclusion.
+          Traced the difference to pipe BC: 4,000&nbsp;ft of 4 inch cast iron pipe carrying 0.52&nbsp;cfs at approximately 6&nbsp;ft/s. The upstream 20 inch pipe adds only several feet of head loss, making the resistance of this 1 branch decisive in the pressure assessment.
         </p>
       </div>
       <div class="callout callout--open" data-reveal style="--d:120ms">
@@ -177,7 +167,7 @@
             </tbody>
           </table>
         </div>
-        <p class="callout__note">Predictions at nodes D and H remain comparable; node C diverges because its supply path includes the 4 inch high resistance branch.</p>
+        <p class="callout__note">The models predict comparable pressures at D and H. Their predictions separate at C, where the supply path includes the high resistance 4 inch branch.</p>
       </div>
     </div>
   </div>
@@ -187,14 +177,12 @@
 <section class="section section--tight">
   <div class="wrap">
     <div class="callout" data-reveal style="max-width:820px">
-      <div class="callout__k">Model verification strategy</div>
+      <div class="callout__k">Making Every Calculation Traceable</div>
       <p class="body" style="margin:0 0 14px">
-        Exposed every iteration to verify convergence behavior, identify the limiting loop, and detect
-        traversal sign errors that can remain hidden in black box solver output.
+        Kept every iteration visible to check convergence, find the limiting loop, and catch traversal sign errors that a final result alone could hide.
       </p>
       <p class="body" style="margin:0">
-        Consolidated model constants on 1 input sheet so changes to pipe material or the
-        Hazen Williams coefficient update the complete network without formula modification.
+        Grouped model constants on 1 input sheet so changes to pipe material or the Hazen Williams coefficient update the entire network without editing formulas.
       </p>
     </div>
   </div>

@@ -39,9 +39,7 @@
     <p class="eyebrow" data-reveal>Primary aircraft program · CSUN Smart Morphing Wing</p>
     <h1 class="display gradient-text" data-reveal style="--d:80ms">The SMART&nbsp;Hawk</h1>
     <p class="lead" data-reveal style="--d:160ms;max-width:780px;margin:20px 0 30px">
-      The SMART Hawk is a 1.67&nbsp;kg, 1.2&nbsp;m span UAV that replaces ailerons, elevator, and
-      rudder with 5 active morphing degrees of freedom. Independently actuated wings provide
-      asymmetric tucking, while a 9 feather tail controls pitch, roll, and spread.
+      Built around the way a hawk changes shape in flight, The SMART Hawk is a 1.67&nbsp;kg UAV with a 1.2&nbsp;m span and 5 active morphing degrees of freedom. Independently controlled wings tuck asymmetrically, and a 9 feather tail adjusts pitch, roll, and spread in place of conventional ailerons, elevator, and rudder.
     </p>
 
     <p data-reveal style="--d:200ms;margin-bottom:30px">
@@ -87,19 +85,15 @@
     <div class="duo">
       <div data-reveal>
         <p class="eyebrow">Design objective</p>
-        <h2 class="h2" style="margin-bottom:20px">Replicating avian control without conventional surfaces</h2>
+        <h2 class="h2" style="margin-bottom:20px">Turning a Hawk's Flight Mechanics Into an Aircraft</h2>
         <p class="body" style="margin-bottom:16px">
-          Red tailed hawks transition between efficient soaring and rapid diving by continuously
-          reshaping their wings and tail rather than deflecting discrete control surfaces.
+          Red tailed hawks reshape their wings and tail as they move between efficient soaring and rapid dives.
         </p>
         <p class="body" style="margin-bottom:16px">
-          The SMART Hawk applies that principle across the complete control architecture. The primary
-          engineering tradeoff was maintaining jointed, feathered mobility while limiting flutter and
-          structural mass.
+          The SMART Hawk brings that motion into its flight controls. The design challenge was to keep the feathered joints free to move while controlling flutter and keeping the structure light.
         </p>
         <p class="body">
-          Integrated an avian inspired articulated skeleton, prepreg carbon fiber feathers molded
-          from scanned hawk geometry, and elastic tendon elements that retract and nest adjacent feathers.
+          Combined an articulated skeleton inspired by a hawk with prepreg carbon fiber feathers molded from scanned hawk geometry. Elastic tendons retract the feathers and bring them together as the wings tuck.
         </p>
       </div>
       <figure class="media media--4x3 media--contain media--paper" data-reveal="scale" data-label="The SMART Hawk CAD model">
@@ -112,11 +106,10 @@
 <!-- ===================== HOW IT MOVES ===================== -->
 <section class="section" id="morphing">
   <div class="wrap">
-    <p class="eyebrow" data-reveal>Morphing control architecture</p>
-    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">5 active degrees of freedom</h2>
+    <p class="eyebrow" data-reveal>How the aircraft changes shape</p>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Controlling Flight Through 5 Active Degrees of Freedom</h2>
     <p class="lead" data-reveal style="max-width:680px;margin-bottom:clamp(36px,5vw,64px)">
-      2 independent wing actuators and 3 tail actuators convert roll, pitch, and yaw commands
-      into geometric changes rather than conventional control surface deflections.
+      2 independent wing actuators and 3 tail actuators respond to roll, pitch, and yaw commands by changing the aircraft's shape.
     </p>
 
     <!-- Wings -->
@@ -126,29 +119,27 @@
           <div class="media media--16x9 media--contain media--paper" data-label="Wing extended">
             <img src="../assets/img/smarthawk/wing-extended.jpg" alt="Morphing wing assembly in the extended configuration">
           </div>
-          <figcaption class="fig__cap"><b>Extended configuration.</b> Feathers span the ulna and metacarpus to establish maximum planform area.</figcaption>
+          <figcaption class="fig__cap"><b>Extended configuration.</b> Feathers extend across the ulna and metacarpus to give the wing its maximum planform area.</figcaption>
         </figure>
         <figure class="fig" data-reveal style="--d:100ms">
           <div class="media media--16x9 media--contain media--paper" data-label="Wing tucked">
             <img src="../assets/img/smarthawk/wing-tucked.jpg" alt="Morphing wing assembly in the tucked configuration">
           </div>
-          <figcaption class="fig__cap"><b>Tucked configuration.</b> Forward mid wing sweep and aft outer wing sweep nest the feathers and reduce area.</figcaption>
+          <figcaption class="fig__cap"><b>Tucked configuration.</b> The middle wing sweeps forward and the outer wing sweeps aft, bringing the feathers together to reduce area.</figcaption>
         </figure>
       </div>
       <div class="duo">
         <div data-reveal>
-          <h3 class="h3" style="margin-bottom:16px">Asymmetric wing tucking</h3>
+          <h3 class="h3" style="margin-bottom:16px">Tucking Each Wing Independently</h3>
           <p class="body">
-            Articulated the outer 28% of each wing through a 3D printed humerus, ulna, radius,
-            and metacarpus mechanism driven by 1 servo. Unilateral tucking reduces that wing's
-            area by 22.5%, creating the aerodynamic asymmetry required to roll toward the tucked side.
+            A 3D printed humerus, ulna, radius, and metacarpus mechanism moves the outer 28% of each wing using 1 servo. Tucking a wing reduces its area by 22.5%, creating the aerodynamic asymmetry intended to roll the aircraft toward that side.
           </p>
         </div>
         <div class="dl" data-reveal style="--d:120ms">
           <div class="dl__row"><div class="dl__k">Composite feathers</div><div class="dl__v"><strong>13 per wing</strong> &mdash; 2 prepreg carbon fiber plies formed around a pre bent aluminum spar</div></div>
-          <div class="dl__row"><div class="dl__k">Passive retraction</div><div class="dl__v">Orthodontic elastics retract free feathers while fishing line constrains maximum extension</div></div>
+          <div class="dl__row"><div class="dl__k">Passive retraction</div><div class="dl__v">Orthodontic elastics pull the free feathers inward, while fishing line limits how far they extend</div></div>
           <div class="dl__row"><div class="dl__k">Aerodynamic geometry</div><div class="dl__v">5&deg; spanwise dihedral with tip washout to delay stall onset</div></div>
-          <div class="dl__row"><div class="dl__k">Actuator margin</div><div class="dl__v">Simscape predicted <strong>2.07&nbsp;N</strong> at the metacarpus against <strong>1.92&nbsp;N</strong> total wing drag, demonstrating available force margin under modeled aerodynamic load</div></div>
+          <div class="dl__row"><div class="dl__k">Actuator margin</div><div class="dl__v">Simscape predicted <strong>2.07&nbsp;N</strong> at the metacarpus against <strong>1.92&nbsp;N</strong> total wing drag, indicating a force margin under the modeled aerodynamic load</div></div>
         </div>
       </div>
     </div>
@@ -160,28 +151,26 @@
           <div class="media media--16x9 media--contain media--paper" data-label="Tail expanded">
             <img src="../assets/img/smarthawk/tail-extended.jpg" alt="Tail feathers fully expanded">
           </div>
-          <figcaption class="fig__cap"><b>Expanded configuration.</b> 9 feathers span 120&deg;, with 1 fixed center feather and 8 rotating elements.</figcaption>
+          <figcaption class="fig__cap"><b>Expanded configuration.</b> 9 feathers open to 120&deg; around 1 fixed center feather and 8 rotating feathers.</figcaption>
         </figure>
         <figure class="fig" data-reveal style="--d:100ms">
           <div class="media media--16x9 media--contain media--paper" data-label="Tail tucked">
             <img src="../assets/img/smarthawk/tail-tucked.jpg" alt="Tail feathers tucked">
           </div>
-          <figcaption class="fig__cap"><b>Tucked configuration.</b> Reducing the spread to 80&deg; changes effective tail area by 45%.</figcaption>
+          <figcaption class="fig__cap"><b>Tucked configuration.</b> Closing the spread to 80&deg; changes the effective tail area by 45%.</figcaption>
         </figure>
       </div>
       <div class="duo">
         <div data-reveal>
-          <h3 class="h3" style="margin-bottom:16px">3 axis tail morphing</h3>
+          <h3 class="h3" style="margin-bottom:16px">Moving the Tail Across 3 Axes</h3>
           <p class="body">
-            Integrated 9 balsa and carbon feathers on a printed bracket using a 4 bar pitch
-            linkage, carbon torque rod roll axis, and PTFE guided spread cable. The 487&nbsp;cm&sup2;
-            working area generated sufficient roll authority to bank the test aircraft without ailerons.
+            Mounted 9 balsa and carbon feathers on a printed bracket with a 4 bar linkage for pitch, a carbon torque rod for roll, and a PTFE guided cable for spread. The tail's 487&nbsp;cm&sup2; working area provided enough roll authority to bank the test aircraft without ailerons.
           </p>
         </div>
         <div class="dl" data-reveal style="--d:120ms">
-          <div class="dl__row"><div class="dl__k">Pitch mechanism</div><div class="dl__v">Servo driven 4 bar linkage with the tail bracket functioning as the rocker</div></div>
+          <div class="dl__row"><div class="dl__k">Pitch mechanism</div><div class="dl__v">A servo drives a 4 bar linkage, with the tail bracket acting as the rocker</div></div>
           <div class="dl__row"><div class="dl__k">Roll mechanism</div><div class="dl__v">6 mm carbon torque rod bonded to the pitch hinge</div></div>
-          <div class="dl__row"><div class="dl__k">Spread mechanism</div><div class="dl__v">Crimped guitar wire actuates both outer feathers symmetrically while elastics provide return force</div></div>
+          <div class="dl__row"><div class="dl__k">Spread mechanism</div><div class="dl__v">Crimped guitar wire moves both outer feathers symmetrically, and elastics pull them back</div></div>
         </div>
       </div>
     </div>
@@ -192,23 +181,20 @@
 <section class="section" id="analysis">
   <div class="wrap">
     <p class="eyebrow" data-reveal>Computational analysis</p>
-    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Airfoil and planform derived from biological geometry</h2>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Taking Hawk Geometry From Scan to Simulation</h2>
     <p class="lead" data-reveal style="max-width:720px;margin-bottom:clamp(36px,5vw,56px)">
-      Derived the feather airfoil from a section through a 3D scan of a red tailed hawk specimen.
-      Characterized the section in XFoil, sized the planform in MachUpX, and evaluated the complete
-      feathered geometry using RANS CFD in ANSYS Fluent and OpenFOAM.
+      Used a section from a 3D scan of a red tailed hawk to define the feather airfoil. Analyzed the section in XFoil, sized the planform in MachUpX, and tested the complete feathered geometry through RANS CFD in ANSYS Fluent and OpenFOAM.
     </p>
 
     <div class="kpis" data-reveal style="margin-bottom:clamp(40px,6vw,72px)">
-      <div class="kpi"><div class="kpi__n">+72.9%</div><div class="kpi__l">Aerodynamic efficiency gained from 3 geometry changes: nose cone, feather incidence, closed wing tip covers</div></div>
-      <div class="kpi"><div class="kpi__n">+99.4%</div><div class="kpi__l">Lift from cambered feathers over flat ones — L/D of 12.2 vs 7.18</div></div>
-      <div class="kpi"><div class="kpi__n">&minus;30%</div><div class="kpi__l">Drag, from closing the open ended outer wing covers into a smooth tip</div></div>
-      <div class="kpi"><div class="kpi__n">2.03</div><div class="kpi__l">Peak sectional lift coefficient of the hawk airfoil, against 1.47 for the flat bottomed inner section</div></div>
+      <div class="kpi"><div class="kpi__n">+72.9%</div><div class="kpi__l">Predicted efficiency gain from 3 changes: the nose cone, feather incidence, and closed wing tip covers</div></div>
+      <div class="kpi"><div class="kpi__n">+99.4%</div><div class="kpi__l">Predicted lift gain from cambered feathers over flat feathers; L/D of 12.2 vs 7.18</div></div>
+      <div class="kpi"><div class="kpi__n">&minus;30%</div><div class="kpi__l">Predicted drag reduction from closing the outer wing covers into a smooth tip</div></div>
+      <div class="kpi"><div class="kpi__n">2.03</div><div class="kpi__l">Predicted peak sectional lift coefficient of the hawk airfoil, compared with 1.47 for the flat bottomed inner section</div></div>
     </div>
 
     <p class="small" data-reveal style="margin:-14px 0 clamp(36px,5vw,60px)">
-      These values are computational results from XFoil, MachUpX, and RANS CFD. Flight demonstrated
-      and predicted capabilities are separated under <a class="link" href="#flight" style="font-size:14px">Flight validation</a>.
+      These values come from XFoil, MachUpX, and RANS CFD. See which capabilities have been demonstrated and which remain predictions under <a class="link" href="#flight" style="font-size:14px">Flight validation</a>.
     </p>
 
     <div class="figpair" style="margin-bottom:clamp(32px,4vw,48px)">
@@ -216,24 +202,21 @@
         <div class="media media--16x9 media--contain media--paper" data-label="CFD — before">
           <img src="../assets/img/smarthawk/cfd-before.jpg" alt="CFD velocity vector field with the original feather incidence angle">
         </div>
-        <figcaption class="fig__cap"><b>Baseline geometry.</b> Feather incidence placed surfaces outside the airfoil envelope, producing direct freestream impingement behind the wing covers.</figcaption>
+        <figcaption class="fig__cap"><b>Baseline geometry.</b> The feather angle placed surfaces outside the airfoil envelope, exposing them to direct freestream flow behind the wing covers.</figcaption>
       </figure>
       <figure class="fig" data-reveal style="--d:100ms">
         <div class="media media--16x9 media--contain media--paper" data-label="CFD — after">
           <img src="../assets/img/smarthawk/cfd-after.jpg" alt="CFD velocity vector field after correcting the feather incidence angle">
         </div>
-        <figcaption class="fig__cap"><b>Revised geometry.</b> Matching feather incidence to the upper camber line increased modeled lift by 10% to 15.1 N.</figcaption>
+        <figcaption class="fig__cap"><b>Revised geometry.</b> Aligning the feathers with the upper camber line increased predicted lift by 10% to 15.1 N.</figcaption>
       </figure>
     </div>
 
     <div class="prose" data-reveal>
       <p>
-        Compared morphing and conventional configurations in MachUpX at matched wing and tail area.
-        The analysis predicted that asymmetric wing tucking generated
+        Compared morphing and conventional aircraft in MachUpX using matched wing and tail areas. The model predicted that asymmetric wing tucking produced
         <strong style="color:var(--text)">more roll than traditional ailerons at every angle of attack above 2°</strong>,
-        while the larger morphing tail generated greater pitch and yaw authority than matched
-        elevator and rudder surfaces. Adding 9° of sweep and &minus;4° of tip twist increased
-        predicted stall onset from 11.5° to 12°.
+        while the larger morphing tail produced greater pitch and yaw authority than the matched elevator and rudder surfaces. Adding 9° of sweep and &minus;4° of tip twist raised the predicted stall angle from 11.5° to 12°.
       </p>
     </div>
   </div>
@@ -243,10 +226,9 @@
 <section class="section" id="build">
   <div class="wrap">
     <p class="eyebrow" data-reveal>Composite fabrication</p>
-    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Repeatable manufacture of 26 cambered wing feathers</h2>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Building 26 Wing Feathers With Consistent Camber</h2>
     <p class="lead" data-reveal style="max-width:720px;margin-bottom:clamp(36px,5vw,56px)">
-      CFD predicted insufficient lift from flat feather geometry. Composite tooling therefore
-      preserved the required camber through layup and cure across all 26 wing feathers.
+      CFD predicted that flat feathers would not provide enough lift. Composite molds held the required camber through layup and cure for all 26 wing feathers.
     </p>
 
     <div class="figpair" style="margin-bottom:clamp(36px,5vw,56px)">
@@ -269,19 +251,19 @@
         <div class="media media--4x3" data-label="Fiberglass molds">
           <img src="../assets/img/smarthawk/feather-molds.jpg" alt="Fiberglass feather molds loaded with prepreg layups">
         </div>
-        <figcaption class="fig__cap">Produced a 7 ply, oven capable fiberglass tool from CNC cut foam sealed with Duratec.</figcaption>
+        <figcaption class="fig__cap">Built a 7 ply fiberglass mold for oven curing from CNC cut foam sealed with Duratec.</figcaption>
       </figure>
       <figure class="fig" data-reveal>
         <div class="media media--4x3 media--contain" data-label="Cured feathers">
           <img src="../assets/img/smarthawk/feathers-cured.jpg" alt="Cured prepreg carbon fiber wing feathers in 3 geometries">
         </div>
-        <figcaption class="fig__cap">3 feather geometries following a 13 hour vacuum cure and finish sanding.</figcaption>
+        <figcaption class="fig__cap">Finished 3 feather geometries with a 13 hour vacuum cure followed by sanding.</figcaption>
       </figure>
       <figure class="fig" data-reveal>
         <div class="media media--4x3 media--contain media--paper" data-label="Inner wing">
           <img src="../assets/img/smarthawk/inner-wing-built.png" alt="The assembled balsa and basswood inner wing under heat shrink film">
         </div>
-        <figcaption class="fig__cap">Laser cut balsa and basswood structure assembled around an 8 mm carbon spar and covered with UltraCote.</figcaption>
+        <figcaption class="fig__cap">Assembled laser cut balsa and basswood around an 8 mm carbon spar, then covered the wing with UltraCote.</figcaption>
       </figure>
     </div>
 
@@ -290,35 +272,26 @@
         <div class="media media--4x3" data-label="Laser cutter">
           <img src="../assets/img/smarthawk/laser-cutter.jpg" alt="The 40 watt Epilog Zing laser cutter used to cut the balsa and basswood parts">
         </div>
-        <figcaption class="fig__cap">Fabricated all wooden aircraft components using a 40 watt Epilog Zing laser cutter.</figcaption>
+        <figcaption class="fig__cap">Cut all wooden aircraft components with a 40 watt Epilog Zing laser cutter.</figcaption>
       </figure>
       <div data-reveal="right" style="--d:120ms">
-        <h3 class="h3" style="margin-bottom:16px">Repeatable laser cut primary structure</h3>
+        <h3 class="h3" style="margin-bottom:16px">Cutting Structural Parts for Consistent Assembly</h3>
         <p class="body" style="margin-bottom:16px">
-          Laser cut the inner wing ribs, stringers, spars, and 9 2&nbsp;mm balsa tail feathers
-          from controlled geometry files. This process maintained consistent airfoil profiles and
-          enabled damaged components to be reproduced without redesign.
+          Laser cut the inner wing ribs, stringers, spars, and 9 tail feathers from saved geometry files, using 2&nbsp;mm balsa for the feathers. The files kept airfoil profiles consistent and made damaged parts straightforward to reproduce.
         </p>
         <p class="body">
-          Incorporated the 5&deg; dihedral directly into the stringer geometry, eliminating assembly induced
-          residual stress and improving left to right wing symmetry identified as critical during flight testing.
+          Built the 5&deg; dihedral into the stringer geometry to avoid residual stress from assembly and improve symmetry between the wings, a requirement highlighted by flight testing.
         </p>
       </div>
     </div>
 
     <div class="prose" data-reveal>
-      <h3 class="h3" style="margin-top:0">Material selection through tensile testing and FEA</h3>
+      <h3 class="h3" style="margin-top:0">Choosing Materials Through Testing and Structural Analysis</h3>
       <p>
-        Tested ASTM&nbsp;D638 specimens in PLA, PLA&nbsp;Aero, ASA, and carbon filled PLA across 4
-        gyroid infill levels using a 10&nbsp;kN tensile machine. Because 15% infill outperformed 30%
-        for PLA and PLA&nbsp;CF, selected 15% gyroid for most printed components; assigned PLA&nbsp;CF
-        to loaded wing mechanisms and UV resistant ASA to the tail.
+        Tested ASTM&nbsp;D638 specimens in PLA, PLA&nbsp;Aero, ASA, and carbon filled PLA at 4 gyroid infill levels on a 10&nbsp;kN tensile machine. For PLA and PLA&nbsp;CF, 15% infill outperformed 30%, guiding the choice of 15% gyroid for most printed parts. PLA&nbsp;CF was selected for loaded wing mechanisms and UV resistant ASA for the tail.
       </p>
       <p>
-        Evaluated components against a 1.5 factor of safety target using Brittle Coulomb Mohr for
-        printed and wooden structures and Tsai Hill for composites. Predicted margins were 1.45 for
-        the wing mechanism, 1.45 for the tail bracket, and 1.05 for the pitch hinge. Designed the
-        airframe for component level replacement to support rapid recovery following flight damage.
+        Checked components against a 1.5 factor of safety target using Brittle Coulomb Mohr for printed and wooden parts and Tsai Hill for composites. Predicted margins were 1.45 for the wing mechanism, 1.45 for the tail bracket, and 1.05 for the pitch hinge. Replaceable components made the airframe easier to repair after flight damage.
       </p>
     </div>
   </div>
@@ -332,25 +305,20 @@
         <p class="eyebrow">Structural analysis tool</p>
         <h2 class="h2" style="margin-bottom:20px">The Tail Calculator</h2>
         <p class="body" style="margin-bottom:16px">
-          Developed The Tail Calculator to evaluate combined bending from the 9 feather cantilevered
-          mass and torsion from roll servo actuation, eliminating repeated manual calculations as tail
-          mass, actuator torque, and rod geometry changed.
+          Built the Tail Calculator to check bending from the cantilevered 9 feather tail and torsion from the roll servo. It updates the analysis as tail mass, actuator torque, and rod geometry change, reducing repeated manual calculations.
         </p>
         <p class="body" style="margin-bottom:16px">
-          Models the tail rod as a cantilever with an end load, accepts direct servo torque or derives
-          torque from tangential force and moment arm, and calculates support reactions, maximum bending
-          moment, total torsion, and combined stresses for a specified rod diameter.
+          The tool models the tail rod as a cantilever with an end load. Users can enter servo torque directly or calculate it from tangential force and moment arm, then find support reactions, maximum bending moment, total torsion, and combined stresses for the chosen rod diameter.
         </p>
         <p class="body">
-          Exports complete results to CSV and generates Arduino compatible constants, maintaining
-          traceability between structural analysis, project documentation, and embedded implementation.
+          CSV exports and generated Arduino compatible constants carry the same results into project documentation and embedded code, keeping the analysis traceable.
         </p>
       </div>
       <figure class="fig" data-reveal="scale" style="--d:120ms">
         <div class="media media--16x9 media--contain" data-label="The Tail Calculator">
           <img src="../assets/img/smarthawk/tail-calculator.png" alt="The Tail Calculator interface for cantilever bending and torsion analysis">
         </div>
-        <figcaption class="fig__cap">Input parameters with calculated reactions, moments, stresses, CSV export, and generated firmware constants.</figcaption>
+        <figcaption class="fig__cap">The interface connects input values to calculated reactions, moments, and stresses, with CSV export and generated firmware constants.</figcaption>
       </figure>
     </div>
   </div>
@@ -359,11 +327,10 @@
 <!-- ===================== EVOLUTION ===================== -->
 <section class="section" id="evolution">
   <div class="wrap">
-    <p class="eyebrow" data-reveal>Incremental flight development</p>
-    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Isolating 1 morphing system at each stage</h2>
+    <p class="eyebrow" data-reveal>Flight development</p>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Testing 1 Morphing System at a Time</h2>
     <p class="lead" data-reveal style="max-width:700px;margin-bottom:clamp(40px,6vw,72px)">
-      Introduced each morphing subsystem on a validated baseline airframe, isolating variables so
-      flight behavior and failure modes could be attributed to a specific design change.
+      Added each morphing system to a proven baseline airframe so changes in flight behavior and failure modes could be traced to a specific design change.
     </p>
 
     <div class="timeline">
@@ -375,11 +342,8 @@
             <img src="../assets/img/smarthawk/evolution-01.jpg" alt="The conventional foamboard RC testbed">
           </figure>
           <div>
-            <h3 class="h3" style="margin-bottom:12px">Conventional baseline aircraft</h3>
-            <p class="body">Built a foamboard, balsa, and PLA baseline with conventional ailerons
-            and elevator while matching The SMART Hawk's planform, area, and 5° dihedral. Stable
-            flight established the control case and located the required center of gravity at 23%
-            of chord aft of the inner wing leading edge.</p>
+            <h3 class="h3" style="margin-bottom:12px">Establishing the Baseline Aircraft</h3>
+            <p class="body">Built a foamboard, balsa, and PLA aircraft with conventional ailerons and elevator, matching The SMART Hawk's planform, area, and 5° dihedral. Stable flight established the baseline and placed the required center of gravity at 23% of chord behind the inner wing leading edge.</p>
           </div>
         </div>
       </article>
@@ -391,11 +355,8 @@
             <img src="../assets/img/smarthawk/evolution-02.jpg" alt="The morphing feathered tail fitted to a conventional RC wing">
           </figure>
           <div>
-            <h3 class="h3" style="margin-bottom:12px">Morphing tail validation</h3>
-            <p class="body">Replaced the conventional tail on the validated airframe with the
-            feathered morphing assembly. The system achieved comparable roll rate without ailerons,
-            increased pitch rate without a horizontal stabilizer, and reduced actuator count from
-            3 servos to 2; average turn radius increased from 24.9 m to 30.0 m.</p>
+            <h3 class="h3" style="margin-bottom:12px">Testing the Morphing Tail</h3>
+            <p class="body">Replaced the baseline aircraft's conventional tail with the feathered morphing assembly. It delivered a comparable roll rate without ailerons and a higher pitch rate without a horizontal stabilizer, using 2 servos instead of 3. Average turn radius increased from 24.9 m to 30.0 m.</p>
           </div>
         </div>
       </article>
@@ -407,10 +368,8 @@
             <img src="../assets/img/smarthawk/evolution-03.jpg" alt="Close up of the feathered morphing wing">
           </figure>
           <div>
-            <h3 class="h3" style="margin-bottom:12px">Morphing wing validation</h3>
-            <p class="body">Installed the morphing wings on an otherwise conventional airframe to
-            evaluate structural behavior and actuation without tail morphing as a 2nd variable.
-            This stage demonstrated feathered wing operation under aerodynamic load.</p>
+            <h3 class="h3" style="margin-bottom:12px">Testing the Morphing Wings</h3>
+            <p class="body">Fitted the morphing wings to an otherwise conventional airframe to test structural response and actuation without adding tail morphing as a 2nd variable. The tests demonstrated that the feathered wings could operate under aerodynamic load.</p>
           </div>
         </div>
       </article>
@@ -423,11 +382,7 @@
           </figure>
           <div>
             <h3 class="h3" style="margin-bottom:12px">The SMART Hawk</h3>
-            <p class="body">Completed 2 approximately 10 second flights with the full morphing
-            configuration. Flight 1 identified load induced feather migration caused by small build
-            asymmetries; interlaced elastics and fishing line corrected the condition. Flight 2
-            maintained straight flight under morphing control before losing altitude during an attempted
-            banked turn. A completed turn using wing tuck roll control remains unverified in flight.</p>
+            <p class="body">Completed 2 flights of approximately 10 seconds with the full morphing aircraft. Flight 1 exposed feather movement under load caused by small build asymmetries, which were addressed with interlaced elastics and fishing line. Flight 2 maintained straight flight under morphing control before losing altitude during an attempted banked turn. A complete turn using wing tuck roll control remains unverified in flight.</p>
           </div>
         </div>
       </article>
@@ -440,11 +395,9 @@
 <section class="section" id="flight">
   <div class="wrap">
     <p class="eyebrow" data-reveal>Flight validation</p>
-    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Separating demonstrated capability from prediction</h2>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">What Flight Testing Has Demonstrated</h2>
     <p class="lead" data-reveal style="max-width:740px;margin-bottom:clamp(36px,5vw,56px)">
-      Demonstrated hand launch, climb, and straight flight using the complete morphing configuration
-      across 2 flights of approximately 10 seconds. The video documents the 2nd flight through
-      the start of an unsuccessful banked turn attempt.
+      The complete morphing aircraft demonstrated hand launch, climb, and straight flight across 2 flights of approximately 10 seconds. The video shows the 2nd flight through the start of an unsuccessful banked turn attempt.
     </p>
 
     <figure class="fig" data-reveal="scale" style="margin-bottom:clamp(40px,6vw,72px)">
@@ -454,8 +407,7 @@
                controls muted loop playsinline preload="metadata"></video>
       </div>
       <figcaption class="fig__cap" style="margin-top:14px">
-        The SMART Hawk in full morphing configuration. The clip ends before altitude loss and impact
-        during the attempted banked turn.
+        The SMART Hawk flying with its full morphing configuration. The clip ends before the aircraft loses altitude and impacts during the attempted banked turn.
       </figcaption>
     </figure>
 
@@ -464,20 +416,20 @@
       <div class="callout callout--proven" data-reveal>
         <div class="callout__k">Demonstrated in flight</div>
         <ul>
-          <li><strong>Morphing tail control.</strong> Achieved banked flight without ailerons at a comparable roll rate and higher pitch rate using 2 servos instead of 3; measured a 30.0&nbsp;m average radius over 7 turns versus 24.9&nbsp;m over 39 conventional turns.</li>
-          <li><strong>Complete aircraft flight.</strong> Completed 2 approximately 10 second flights, including straight flight under morphing control.</li>
-          <li><strong>In flight actuation.</strong> Demonstrated wing and tail mechanism operation under aerodynamic loading while the airframe sustained cruise and maneuver loads.</li>
+          <li><strong>Morphing tail control.</strong> Banked the test aircraft without ailerons, achieving a comparable roll rate and higher pitch rate with 2 servos instead of 3. Average turn radius was 30.0&nbsp;m across 7 turns, compared with 24.9&nbsp;m across 39 conventional turns.</li>
+          <li><strong>Complete aircraft flight.</strong> Completed 2 flights of approximately 10 seconds, including straight flight using morphing controls.</li>
+          <li><strong>In flight actuation.</strong> Operated the wing and tail mechanisms under aerodynamic load while the airframe carried cruise and maneuver loads.</li>
         </ul>
       </div>
 
       <div class="callout callout--open" data-reveal style="--d:120ms">
         <div class="callout__k">Predicted, not yet demonstrated</div>
         <ul>
-          <li><strong>Wing tuck roll control.</strong> Lifting line and CFD predict greater roll generation than conventional ailerons above 2° angle of attack, while Simscape predicts adequate actuator force; a complete banked turn has not yet been demonstrated.</li>
-          <li><strong>Closed loop stabilization.</strong> Truck mounted evaluation did not achieve sustained stabilization because the temporary fixture could not provide repeatable inflow.</li>
+          <li><strong>Wing tuck roll control.</strong> Lifting line analysis and CFD predict more roll than conventional ailerons above 2° angle of attack, and Simscape predicts sufficient actuator force. A complete banked turn using this control method has not yet been demonstrated.</li>
+          <li><strong>Closed loop stabilization.</strong> Testing on a moving truck did not achieve sustained stabilization because the temporary setup could not provide repeatable airflow.</li>
         </ul>
         <p class="callout__note">
-          Closing these validation gaps requires controlled full span inflow, which is the design purpose of The Wind Generator.
+          The Wind Generator was built to provide the controlled full span airflow needed to investigate these remaining validation gaps.
         </p>
       </div>
 
@@ -485,16 +437,12 @@
 
     <div class="duo" style="margin-top:clamp(40px,6vw,72px)">
       <div data-reveal>
-        <h3 class="h3" style="margin-bottom:16px">Pilot training for coupled morphing controls</h3>
+        <h3 class="h3" style="margin-bottom:16px">Preparing Pilots for Morphing Flight Controls</h3>
         <p class="body" style="margin-bottom:16px">
-          Developed a RealFlight Evolution model to train pilots without risking the physical airframe.
-          The model captures coupled behavior: unilateral wing tucking shifts the center of gravity
-          2.1&nbsp;in forward and 1.5&nbsp;in away from the tucked side, while tail roll and pitch
-          commands remain aerodynamically coupled.
+          Built a RealFlight Evolution model so pilots could practice before flying the physical aircraft. The model captures how the controls interact: tucking a wing shifts the center of gravity 2.1&nbsp;in forward and 1.5&nbsp;in away from the tucked side, while tail roll and pitch commands remain aerodynamically coupled.
         </p>
         <p class="body">
-          The publication identifies The SMART Hawk as the 1st model combining cambered artificial
-          feathers with a morphing tail capable of controlling the aircraft independently of wing morphing.
+          The publication describes The SMART Hawk as the 1st model to combine cambered artificial feathers with a morphing tail that can control the aircraft independently of wing morphing.
         </p>
       </div>
       <figure class="fig" data-reveal="scale" style="--d:120ms">
@@ -508,23 +456,16 @@
     <div class="callout" data-reveal style="margin-top:clamp(36px,5vw,56px);max-width:760px">
       <div class="callout__k">Engineering contribution</div>
       <p class="body" style="margin-bottom:14px">
-        Served as testing lead for the 17 person team developing The SMART Hawk, with responsibility for the
-        equipment and procedures used to validate propulsion, structural response, and flight controls.
+        Led testing for the 17 person SMART Hawk team, developing the equipment and procedures used to evaluate propulsion, structural response, and flight controls.
       </p>
       <p class="body" style="margin-bottom:14px">
-        Established a laboratory test path for the aircraft by developing the constrained motion
-        The Bird Stand, expanding The Wind Generator, and rebuilding The Thrust Stand. These systems
-        moved critical control and propulsion decisions from trial and error flight testing into
-        repeatable ground tests.
+        Built a laboratory testing approach around the Bird Stand, an expanded Wind Generator, and a rebuilt Thrust Stand. These systems brought critical control and propulsion decisions into repeatable ground tests.
       </p>
       <p class="body" style="margin-bottom:14px">
-        An initial truck mounted test did not achieve sustained stabilization because of gusts,
-        vehicle upwash, and nonuniform flow. Converted those findings into requirements for
-        The Bird Stand and The Wind Generator.
+        Used the initial truck test to define requirements for the Bird Stand and Wind Generator after gusts, vehicle upwash, and uneven airflow prevented sustained stabilization.
       </p>
       <p class="body" style="margin:0">
-        Also supported aircraft manufacturing through composite layup, laser cut structural parts,
-        mechanical assembly, wiring, and test preparation.
+        Also helped build and prepare the aircraft through composite layup, laser cutting, mechanical assembly, wiring, and test setup.
       </p>
     </div>
   </div>
@@ -556,11 +497,10 @@
 <!-- ===================== WHAT CAME OUT OF IT ===================== -->
 <section class="section section--tight" id="branches">
   <div class="wrap">
-    <p class="eyebrow" data-reveal>Integrated test infrastructure</p>
-    <h2 class="h2" data-reveal style="margin-bottom:14px">Systems developed to validate The SMART Hawk</h2>
+    <p class="eyebrow" data-reveal>Supporting test systems</p>
+    <h2 class="h2" data-reveal style="margin-bottom:14px">Building the Tools to Test The SMART Hawk</h2>
     <p class="lead" data-reveal style="max-width:660px;margin-bottom:clamp(28px,4vw,44px)">
-      Developed purpose built airflow, structural, and propulsion systems because the 1.2 m aircraft
-      exceeded available wind tunnel dimensions and required repeatable laboratory validation.
+      Built dedicated airflow, structural, and propulsion test systems to evaluate the 1.2 m aircraft under repeatable laboratory conditions beyond the dimensions of available wind tunnels.
     </p>
     <div class="grid-3" data-stagger="100">
       <a class="card" href="wind-generator.html" data-reveal>
@@ -572,7 +512,7 @@
         <div class="card__body">
           <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk · Airflow</span>
           <h3 class="h3">The Wind Generator</h3>
-          <p class="body">Expanded from 3 to 5 modules and from 6 to 10 independently controlled motors, enabling full span airflow testing through a Jetson based interface.</p>
+          <p class="body">Expanded the array from 3 to 5 modules and from 6 to 10 independently controlled motors to support full span airflow testing through a Jetson based interface.</p>
           <span class="link">View The Wind Generator <span class="chev">&#8594;</span></span>
         </div>
       </a>
@@ -585,7 +525,7 @@
         <div class="card__body">
           <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk · Structure</span>
           <h3 class="h3">The Bird Stand</h3>
-          <p class="body">Constrains aircraft translation while permitting pitch and roll about the center of gravity, enabling repeatable control system development.</p>
+          <p class="body">Holds the aircraft in place while allowing pitch and roll about its center of gravity, providing a repeatable platform for developing flight controls.</p>
           <span class="link">View The Bird Stand <span class="chev">&#8594;</span></span>
         </div>
       </a>
@@ -598,7 +538,7 @@
         <div class="card__body">
           <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk · Propulsion</span>
           <h3 class="h3">The Thrust Stand</h3>
-          <p class="body">Selected a 1250 KV motor and 11 × 5.5 propeller that produced 18 N of static thrust and a 1.1 thrust to weight ratio.</p>
+          <p class="body">Testing guided the selection of a 1250 KV motor and 11 × 5.5 propeller that delivered 18 N of static thrust and a 1.1 thrust to weight ratio.</p>
           <span class="link">View The Thrust Stand <span class="chev">&#8594;</span></span>
         </div>
       </a>

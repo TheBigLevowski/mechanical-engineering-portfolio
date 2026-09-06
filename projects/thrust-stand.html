@@ -38,14 +38,12 @@
     <p class="eyebrow" data-reveal>The SMART Hawk · Propulsion test system</p>
     <h1 class="display gradient-text" data-reveal style="--d:80ms">The Thrust Stand</h1>
     <p class="lead" data-reveal style="--d:160ms;max-width:760px;margin:20px 0 30px">
-      Reconfigured as a reliable propulsion instrument, this static test rig measures axial thrust
-      through a 5 kg load cell and streams results to an ESP32 hosted dashboard. Testing identified
-      the motor and propeller configuration used on The SMART Hawk.
+      Rebuilt for reliable propulsion testing, the Thrust Stand uses a 5 kg load cell to measure axial thrust and stream results to an ESP32 dashboard. The test results guided the motor and propeller selection for The SMART Hawk.
     </p>
 
     <div class="lineage-bar" data-reveal style="--d:60ms;margin-bottom:26px;max-width:760px">
       <span class="chip chip--program"><span class="chip__dot"></span>The SMART Hawk program</span>
-      <span>Developed to validate a propulsion system capable of supporting The SMART Hawk's 11&nbsp;m/s design condition. &nbsp;<a class="link" href="smarthawk.html" style="font-size:14px">View The SMART Hawk <span class="chev">&#8594;</span></a></span>
+      <span>Built to test propulsion hardware for The SMART Hawk's 11&nbsp;m/s design condition. &nbsp;<a class="link" href="smarthawk.html" style="font-size:14px">View The SMART Hawk <span class="chev">&#8594;</span></a></span>
     </div>
   </div>
 </section>
@@ -80,28 +78,23 @@
     <div class="duo">
       <div data-reveal>
         <p class="eyebrow">Propulsion selection</p>
-        <h2 class="h2" style="margin-bottom:20px">Converting a design velocity into verified hardware</h2>
+        <h2 class="h2" style="margin-bottom:20px">Turning Propulsion Requirements Into Tested Hardware</h2>
         <p class="body" style="margin-bottom:16px">
-          The SMART Hawk aerodynamic model assumed an 11&nbsp;m/s cruise condition. Propulsion testing
-          was therefore required to verify that a production motor and propeller could provide adequate
-          thrust for the 1.67&nbsp;kg airframe.
+          The SMART Hawk's aerodynamic model used an 11&nbsp;m/s cruise condition. Testing compared available motors and propellers to assess thrust for the 1.67&nbsp;kg airframe.
         </p>
         <p class="body" style="margin-bottom:16px">
-          Compared 1100&nbsp;KV and 1250&nbsp;KV motors across multiple propeller configurations.
-          The selected 1250&nbsp;KV motor with an 11&nbsp;&times;&nbsp;5.5&nbsp;inch propeller produced
-          <strong style="color:var(--text)">18&nbsp;N</strong> of static thrust, giving the
-          morphing aircraft a thrust to weight ratio of <strong style="color:var(--text)">1.1</strong>.
+          Tested 1100&nbsp;KV and 1250&nbsp;KV motors with multiple propellers. The selected 1250&nbsp;KV motor and 11&nbsp;&times;&nbsp;5.5&nbsp;inch propeller delivered
+          <strong style="color:var(--text)">18&nbsp;N</strong> of static thrust, giving the aircraft a thrust to weight ratio of <strong style="color:var(--text)">1.1</strong>.
         </p>
         <p class="body">
-          Upgraded the 9th cohort mechanical platform by correcting the sensor wiring, improving
-          communication reliability, and developing a new browser based data acquisition interface.
+          Upgraded the 9th cohort's mechanical platform with corrected sensor wiring, more reliable communication, and a new browser interface for capturing test data.
         </p>
       </div>
       <figure class="fig" data-reveal="scale" style="--d:120ms">
         <div class="media media--3x4" data-label="The Thrust Stand on the laboratory bench" style="aspect-ratio:3/4">
           <img src="../assets/img/thrust-stand/stand-bench.jpg" alt="The Thrust Stand with motor, electronic speed controller, and instrumentation wiring">
         </div>
-        <figcaption class="fig__cap">Rigid vertical support with the motor mount and load cell aligned along the thrust axis.</figcaption>
+        <figcaption class="fig__cap">The rigid vertical support aligns the motor mount and load cell along the thrust axis.</figcaption>
       </figure>
     </div>
   </div>
@@ -110,19 +103,18 @@
 <!-- ===================== MEASUREMENT CHAIN ===================== -->
 <section class="section" id="chain">
   <div class="wrap">
-    <p class="eyebrow" data-reveal>Measurement architecture</p>
-    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Direct axial load measurement</h2>
+    <p class="eyebrow" data-reveal>Measuring thrust</p>
+    <h2 class="h1 gradient-text" data-reveal style="margin-bottom:18px">Measuring Thrust Along the Motor Axis</h2>
     <p class="lead" data-reveal style="max-width:700px;margin-bottom:clamp(36px,5vw,56px)">
-      Aligned the motor, structural reaction path, and load cell to prioritize axial thrust while
-      minimizing sensitivity to off axis loading.
+      Aligned the motor, load path, and load cell to measure axial thrust and reduce the influence of loads acting in other directions.
     </p>
 
     <div class="dl" data-reveal style="max-width:900px">
-      <div class="dl__row"><div class="dl__k">Mechanical structure</div><div class="dl__v">Uses a rigid base and vertical support with a forward facing motor mount; interchangeable hardware enables direct back to back configuration testing</div></div>
-      <div class="dl__row"><div class="dl__k">Force measurement</div><div class="dl__v">Conditions a <strong>5 kg single axis load cell</strong> through an <strong>HX711</strong> 24 bit ADC, with data on ESP32 GPIO&nbsp;4 and clock on GPIO&nbsp;2</div></div>
-      <div class="dl__row"><div class="dl__k">Electrical integration</div><div class="dl__v">Matched signal assignments to the firmware pinout and established a common ground reference, eliminating software remapping and stabilizing force measurements</div></div>
-      <div class="dl__row"><div class="dl__k">Calibration method</div><div class="dl__v">Applies a known mass to determine the calibration factor, then stores the coefficient in nonvolatile device memory for reuse after power cycling</div></div>
-      <div class="dl__row"><div class="dl__k">Operating envelope</div><div class="dl__v">Supports static propulsion testing below the rated capacity of the load cell</div></div>
+      <div class="dl__row"><div class="dl__k">Mechanical structure</div><div class="dl__v">Combines a rigid base, vertical support, and forward facing motor mount with interchangeable hardware for comparing motor and propeller setups</div></div>
+      <div class="dl__row"><div class="dl__k">Force measurement</div><div class="dl__v">Reads a <strong>5 kg single axis load cell</strong> through an <strong>HX711</strong> 24 bit ADC, using ESP32 GPIO&nbsp;4 for data and GPIO&nbsp;2 for clock</div></div>
+      <div class="dl__row"><div class="dl__k">Electrical integration</div><div class="dl__v">Matched sensor wiring to the firmware pinout and added a common ground to stabilize force readings without software remapping</div></div>
+      <div class="dl__row"><div class="dl__k">Calibration method</div><div class="dl__v">Uses a known mass to calculate the calibration factor and saves it in nonvolatile memory so calibration remains available after a restart</div></div>
+      <div class="dl__row"><div class="dl__k">Operating envelope</div><div class="dl__v">Measures static thrust within the load cell's rated capacity</div></div>
     </div>
   </div>
 </section>
@@ -133,26 +125,22 @@
     <div class="duo">
       <div data-reveal>
         <p class="eyebrow">Data acquisition interface</p>
-        <h2 class="h2" style="margin-bottom:20px">Self contained wireless instrumentation</h2>
+        <h2 class="h2" style="margin-bottom:20px">Live Thrust Data Through a Wireless Dashboard</h2>
         <p class="body" style="margin-bottom:16px">
-          Configured the ESP32 as an independent Wi Fi access point that serves the dashboard from
-          onboard memory, eliminating dependence on laboratory networking or installed host software.
+          Configured the ESP32 to host the dashboard from onboard memory through its own Wi Fi access point. Users can connect directly without a laboratory network or additional software.
         </p>
         <p class="body" style="margin-bottom:16px">
-          Displays live and maximum thrust in grams, newtons, and pounds force; provides start,
-          pause, tare, and maximum reset controls; and plots force on a fixed 0&ndash;5000&nbsp;g
-          scale for consistent comparison of startup, steady state, and shutdown behavior.
+          The dashboard displays live and peak thrust in grams, newtons, and pounds force, with controls to start, pause, tare, and reset the peak reading. A fixed 0&ndash;5000&nbsp;g plot makes startup, steady state, and shutdown behavior easy to compare.
         </p>
         <p class="body">
-          Supports user selectable sample intervals from 10&nbsp;ms to 2000&nbsp;ms, with a 50&nbsp;ms
-          default, and exports each test as a timestamped CSV for post processing.
+          Users can set the sample interval from 10&nbsp;ms to 2000&nbsp;ms, with a 50&nbsp;ms default, and export each test as a timestamped CSV for further analysis.
         </p>
       </div>
       <figure class="fig" data-reveal="scale" style="--d:120ms">
         <div class="media media--4x3 media--contain" data-label="ESP32 thrust stand dashboard">
           <img src="../assets/img/thrust-stand/dashboard.png" alt="The ESP32 thrust stand web dashboard">
         </div>
-        <figcaption class="fig__cap">Dashboard served from ESP32 memory through a dedicated wireless access point.</figcaption>
+        <figcaption class="fig__cap">The ESP32 hosts the dashboard and provides a dedicated wireless connection.</figcaption>
       </figure>
     </div>
 
@@ -160,16 +148,16 @@
       <div class="callout callout--proven" data-reveal>
         <div class="callout__k">Validated capabilities</div>
         <ul>
-          <li><strong>Axial force measurement</strong> to approximately 49&nbsp;N, calibrated against a known mass with nonvolatile coefficient storage.</li>
-          <li><strong>Live data acquisition</strong> in 3 engineering units, including time history plotting and CSV export.</li>
-          <li><strong>Propulsion comparison</strong> &mdash; selected the motor and propeller configuration installed on The SMART Hawk.</li>
+          <li><strong>Axial force measurement</strong> up to approximately 49&nbsp;N, with calibration against a known mass and a calibration factor saved in nonvolatile memory.</li>
+          <li><strong>Live data acquisition</strong> in 3 engineering units, with plots over time and CSV export.</li>
+          <li><strong>Propulsion comparison</strong>: test results guided the motor and propeller selection for The SMART Hawk.</li>
         </ul>
       </div>
       <div class="callout callout--open" data-reveal style="--d:120ms">
         <div class="callout__k">Planned capability</div>
         <ul>
-          <li>Integrate 2 additional force transducers to resolve loading in <strong>X, Y, and Z</strong>.</li>
-          <li>Extend the platform from axial thrust characterization to 3 axis propulsion interaction measurement for asymmetric aircraft wake conditions.</li>
+          <li>Add 2 force sensors to measure loads in <strong>X, Y, and Z</strong>.</li>
+          <li>Expand the stand to measure propulsion interactions across 3 axes under asymmetric aircraft wake conditions.</li>
         </ul>
       </div>
     </div>
@@ -177,12 +165,10 @@
     <div class="callout" data-reveal style="margin-top:clamp(36px,5vw,56px);max-width:760px">
       <div class="callout__k">Engineering contribution</div>
       <p class="body" style="margin-bottom:14px">
-        Inherited the physical rig from the 9th cohort and led its instrumentation and software redesign.
+        Built on the 9th cohort's physical rig and led the instrumentation and software redesign.
       </p>
       <p class="body" style="margin:0">
-        Rewired the sensor outputs to match the firmware pinout, rebuilt the web interface, and
-        revised ESP32 connection handling. These changes eliminated mid test communication drops
-        and enabled continuous data capture, live plotting, and timestamped CSV export.
+        Matched the sensor wiring to the firmware, rebuilt the browser interface, and improved ESP32 connection handling. These changes stopped communication drops during testing and enabled continuous data capture, live plots, and timestamped CSV exports.
       </p>
     </div>
   </div>
